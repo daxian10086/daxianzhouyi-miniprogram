@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.37</text>
+    <text class="version">v2.3.38</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -67,18 +67,25 @@
     <!-- 选项卡 -->
     <view class="tabs">
       <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
-        运势详解
+        选中爻
       </view>
       <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
-        选中爻
+        运势详解
       </view>
       <view class="tab {{currentTab == 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
         其他爻
       </view>
     </view>
 
-    <!-- 运势详解（第一个标签） -->
+    <!-- 选中爻（第一个标签） -->
     <view class="tab-content" wx:if="{{currentTab == 0}}">
+      <view class="selected-line" wx:if="{{hexagram && hexagram.selectedLineText}}">
+        <text class="content">【解卦】{{hexagram.selectedLineName}}：{{hexagram.selectedLineText}}\n\n{{hexagram.selectedLineDesc}}</text>
+      </view>
+    </view>
+
+    <!-- 运势详解（第二个标签） -->
+    <view class="tab-content" wx:if="{{currentTab == 1}}">
       <view class="fortune-detail" wx:if="{{hasShared}}">
         <view class="fortune-item">
           <text class="fortune-label">运势</text>
@@ -96,18 +103,6 @@
           <text class="fortune-label">健康</text>
           <text class="fortune-text">{{fortuneAnalysis.jiankang}}</text>
         </view>
-      </view>
-      <view class="share-blur" wx:else>
-        <text class="blur-text">🔒 内容已隐藏</text>
-        <text class="blur-hint">观看广告即可查看运势详解</text>
-        <button class="share-btn" bindtap="handleWaitUnlock">立即解锁</button>
-      </view>
-    </view>
-
-    <!-- 选中爻（第二个标签） -->
-    <view class="tab-content" wx:if="{{currentTab == 1}}">
-      <view class="selected-line" wx:if="{{hasShared}}">
-        <text class="content">【解卦】{{hexagram.selectedLineName}}：{{hexagram.selectedLineText}}\n\n{{hexagram.selectedLineDesc}}</text>
       </view>
       <view class="share-blur" wx:else>
         <text class="blur-text">🔒 内容已隐藏</text>
