@@ -23,6 +23,12 @@
   margin-top: 32rpx;
 }
 
+.version {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+
 .shaking-area {
   display: flex;
   flex-direction: column;
