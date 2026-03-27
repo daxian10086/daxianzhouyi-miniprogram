@@ -43,7 +43,7 @@
 
 .shaking-img {
   width: 4000rpx;
-  height: 4000rpx;
+  height: auto;
   /* 摇动动画 */
   animation: shake 0.5s ease-in-out infinite;
   will-change: transform;
