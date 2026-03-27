@@ -320,6 +320,9 @@ Page({
 
   // 页面加载
   onLoad() {
+    // 检查小程序更新
+    this.checkUpdate();
+
     const hasReadDisclaimer = wx.getStorageSync('hasReadDisclaimer');
     if (!hasReadDisclaimer) {
       this.setData({ showDisclaimerModal: true });
@@ -367,6 +370,55 @@ Page({
         }
       });
     }
+  },
+
+  // 检查小程序更新
+  checkUpdate() {
+    if (!wx.getUpdateManager) {
+      console.log('当前微信版本不支持自动更新');
+      return;
+    }
+
+    const updateManager = wx.getUpdateManager();
+
+    // 监听向微信后台请求检查更新结果事件
+    updateManager.onCheckForUpdate((res) => {
+      console.log('检查更新结果:', res.hasUpdate);
+    });
+
+    // 监听小程序有版本更新事件
+    updateManager.onUpdateReady(() => {
+      wx.showModal({
+        title: '版本更新',
+        content: '新版本已准备好，是否立即更新？\n\n更新后将删除缓存并重新进入小程序',
+        confirmText: '立即更新',
+        cancelText: '稍后再说',
+        success: (res) => {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate();
+          } else {
+            // 用户选择稍后更新，下次启动时会再次提示
+            console.log('用户选择稍后更新');
+          }
+        }
+      });
+    });
+
+    // 监听小程序更新失败事件
+    updateManager.onUpdateFailed(() => {
+      wx.showModal({
+        title: '更新失败',
+        content: '新版本下载失败，请检查网络后重新进入小程序',
+        showCancel: false,
+        success: () => {
+          // 可以选择重新进入小程序
+          wx.reLaunch({
+            url: '/pages/index/index'
+          });
+        }
+      });
+    });
   },
 
   // 页面卸载时停止监听加速度
