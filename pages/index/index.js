@@ -17,10 +17,7 @@ Page({
     isShaking: false, // 是否正在摇动
     shakeStatusText: '摇动手机开始算卦', // 摇动状态提示文字
     showShakeModal: false, // 是否显示摇动提示弹窗
-    showShareModal: false, // 是否显示分享引导弹窗
-    showWaitUnlockModal: false, // 是否显示等待解锁弹窗
-    waitCountdown: 30, // 等待解锁倒计时（秒）
-    hasShared: false // 是否已分享
+    hasShared: false // 是否已解锁
   },
 
   // 摇一摇检测变量
@@ -374,10 +371,6 @@ Page({
       clearTimeout(this._stopShakeTimer);
       this._stopShakeTimer = null;
     }
-    if (this._countdownTimer) {
-      clearTimeout(this._countdownTimer);
-      this._countdownTimer = null;
-    }
     this.stopVibration();
     this.stopAccelerometer();
 
@@ -400,10 +393,6 @@ Page({
       clearTimeout(this._stopShakeTimer);
       this._stopShakeTimer = null;
     }
-    if (this._countdownTimer) {
-      clearTimeout(this._countdownTimer);
-      this._countdownTimer = null;
-    }
     this.stopVibration();
     this.stopAccelerometer();
   },
@@ -419,21 +408,8 @@ Page({
     wx.setStorageSync('hasReadDisclaimer', true);
   },
 
-  // 显示分享弹窗
-  showShareModal() {
-    this.setData({ showShareModal: true });
-  },
-
-  // 隐藏分享弹窗
-  hideShareModal() {
-    this.setData({ showShareModal: false });
-  },
-
   // 看广告解锁 - 显示激励视频广告
   handleWaitUnlock() {
-    // 关闭分享弹窗
-    this.setData({ showShareModal: false });
-
     // 显示激励视频广告
     if (this.videoAd) {
       this.videoAd.show().catch(() => {
@@ -454,75 +430,5 @@ Page({
         icon: 'none'
       });
     }
-  },
-
-  // 开始倒计时
-  _startCountdown(countdown) {
-    if (countdown <= 0) {
-      // 倒计时结束
-      this._countdownTimer = null;
-      this.setData({ waitCountdown: 0 });
-      return;
-    }
-
-    this._countdownTimer = setTimeout(() => {
-      countdown--;
-      this.setData({ waitCountdown: countdown });
-      this._startCountdown(countdown);
-    }, 1000);
-  },
-
-  // 隐藏等待解锁弹窗
-  hideWaitUnlockModal() {
-    // 清除倒计时定时器
-    if (this._countdownTimer) {
-      clearTimeout(this._countdownTimer);
-      this._countdownTimer = null;
-    }
-
-    // 关闭弹窗并解锁（仅本次有效，不保存）
-    this.setData({
-      showWaitUnlockModal: false,
-      hasShared: true
-    });
-
-    // 2秒延迟后显示解锁提示
-    setTimeout(() => {
-      wx.showToast({
-        title: '已解锁',
-        icon: 'success'
-      });
-    }, 2000);
-  },
-
-  // 分享解锁按钮点击 - 先解锁内容，再打开分享面板
-  handleShareUnlock() {
-    // 关闭弹窗
-    this.setData({ showShareModal: false });
-
-    // 立即解锁内容（仅本次有效，不保存）
-    this.setData({ hasShared: true });
-
-    // 2秒延迟后显示解锁提示
-    setTimeout(() => {
-      wx.showToast({
-        title: '已解锁',
-        icon: 'success',
-        duration: 1500
-      });
-    }, 2000);
-  },
-
-  // 页面分享 - 确保内容已解锁
-  onShareAppMessage() {
-    // 确保解锁内容（仅本次有效，不保存）
-    this.setData({ hasShared: true });
-
-    // 返回分享配置
-    return {
-      title: `我刚抽中了第${this.data.hexagram ? this.data.hexagram.number : ''}卦《${this.data.hexagram ? this.data.hexagram.name : ''}》，来看看你的运势如何！`,
-      path: '/pages/index/index',
-      imageUrl: '/assets/sharing.png'
-    };
   }
 });

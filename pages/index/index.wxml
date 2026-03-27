@@ -98,8 +98,8 @@
       </view>
       <view class="share-blur" wx:else>
         <text class="blur-text">🔒 内容已隐藏</text>
-        <text class="blur-hint">分享给好友即可查看运势详解</text>
-        <button class="share-btn" bindtap="showShareModal">立即分享</button>
+        <text class="blur-hint">观看广告即可查看运势详解</text>
+        <button class="share-btn" bindtap="handleWaitUnlock">立即解锁</button>
       </view>
     </view>
 
@@ -110,8 +110,8 @@
       </view>
       <view class="share-blur" wx:else>
         <text class="blur-text">🔒 内容已隐藏</text>
-        <text class="blur-hint">分享给好友即可查看运势详解</text>
-        <button class="share-btn" bindtap="showShareModal">立即分享</button>
+        <text class="blur-hint">观看广告即可查看运势详解</text>
+        <button class="share-btn" bindtap="handleWaitUnlock">立即解锁</button>
       </view>
     </view>
 
@@ -123,8 +123,8 @@
       </view>
       <view class="share-blur" wx:if="{{!hasShared}}">
         <text class="blur-text">🔒 内容已隐藏</text>
-        <text class="blur-hint">分享给好友即可查看运势详解</text>
-        <button class="share-btn" bindtap="showShareModal">立即分享</button>
+        <text class="blur-hint">观看广告即可查看运势详解</text>
+        <button class="share-btn" bindtap="handleWaitUnlock">立即解锁</button>
       </view>
     </view>
   </view>
@@ -150,27 +150,5 @@
     <view class="disclaimer-footer">
       <button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button>
     </view>
-  </view>
-</view>
-
-<!-- 分享引导弹窗 -->
-<view class="share-modal" wx:if="{{showShareModal}}">
-  <view class="share-modal-content">
-    <view class="share-icon">🎁</view>
-    <view class="share-title">解锁完整内容</view>
-    <view class="share-desc">观看广告即可解锁完整的解卦内容和六爻详解</view>
-    <button class="share-confirm-btn" open-type="share" bindtap="handleShareUnlock">分享解锁</button>
-    <button class="share-cancel-btn" bindtap="handleWaitUnlock">看广告解锁</button>
-  </view>
-</view>
-
-<!-- 等待解锁弹窗 -->
-<view class="wait-unlock-modal" wx:if="{{showWaitUnlockModal}}">
-  <view class="wait-unlock-content">
-    <view class="wait-unlock-close-corner">
-      <text wx:if="{{waitCountdown > 0}}" class="countdown-corner">{{waitCountdown}}s</text>
-      <button wx:else class="close-corner-btn" bindtap="hideWaitUnlockModal">关闭</button>
-    </view>
-    <image class="wait-unlock-image" src="/assets/ad.jpg" mode="widthFix"></image>
   </view>
 </view>
