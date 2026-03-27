@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.30</text>
+    <text class="version">v2.3.31</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -15,13 +15,13 @@
 
   <!-- 步骤2: 正在摇卦动画（用户摇动时显示） -->
   <view class="shaking-area" wx:if="{{isShaking}}">
-    <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="aspectFit"></image>
+    <image class="shaking-img shake-animation" src="/assets/shaking.png"></image>
     <view class="shaking-text active">正在摇卦...</view>
   </view>
 
   <!-- 步骤3: 算卦中动画（停止摇动后显示2秒） -->
   <view class="shaking-area" wx:if="{{isAnimating && !isShaking}}">
-    <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="aspectFit"></image>
+    <image class="shaking-img shake-animation" src="/assets/shaking.png"></image>
     <view class="shaking-text active">算卦中...</view>
   </view>
 

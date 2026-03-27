@@ -35,8 +35,10 @@
   align-items: center;
   justify-content: center;
   min-height: 500rpx;
+  min-width: 100%;
   margin-top: 48rpx;
   overflow: visible;
+  position: relative;
 }
 
 .shaking-img {
