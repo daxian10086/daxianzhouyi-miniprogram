@@ -2,6 +2,12 @@
 .miniprogram-cache/
 .temp/
 
+# 敏感文件（不要提交到 GitHub）
+*.key
+*.pem
+private.key
+project.private.config.json
+
 # Node.js
 node_modules/
 npm-debug.log
