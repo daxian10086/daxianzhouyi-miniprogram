@@ -350,6 +350,14 @@ Page({
             title: '已解锁',
             icon: 'success'
           });
+
+          // 延迟 500ms 后滚动到页面底部
+          setTimeout(() => {
+            wx.pageScrollTo({
+              scrollTop: 9999,
+              duration: 300
+            });
+          }, 500);
         } else {
           // 用户未看完广告
           wx.showToast({
