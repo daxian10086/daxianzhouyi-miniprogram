@@ -13,15 +13,23 @@ App({
       }
     })
 
-    // 从app.json读取版本号
-    const appConfig = require('./app.json')
-    this.globalData.version = appConfig.version || 'v2.3.58'
-    this.globalData.versionDate = appConfig.versionDate || '2026-03-30'
+    // 读取app.json配置
+    try {
+      const appConfig = require('./app.json')
+      if (appConfig && appConfig.version) {
+        this.globalData.version = appConfig.version
+      }
+      if (appConfig && appConfig.versionDate) {
+        this.globalData.versionDate = appConfig.versionDate
+      }
+    } catch (e) {
+      console.log('读取app.json失败，使用默认版本号', e)
+    }
   },
 
   globalData: {
     userInfo: null,
-    version: 'v2.3.58',
+    version: 'v2.3.62',
     versionDate: '2026-03-30'
   }
 })
