@@ -12,9 +12,16 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+
+    // 从app.json读取版本号
+    const appConfig = require('./app.json')
+    this.globalData.version = appConfig.version || 'v2.3.58'
+    this.globalData.versionDate = appConfig.versionDate || '2026-03-30'
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    version: 'v2.3.58',
+    versionDate: '2026-03-30'
   }
 })

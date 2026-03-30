@@ -1,4 +1,6 @@
 {
+  "version": "v2.3.59",
+  "versionDate": "2026-03-30",
   "pages": [
     "pages/index/index",
     "pages/result/result"
