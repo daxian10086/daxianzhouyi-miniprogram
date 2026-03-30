@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.43</text>
+    <text class="version">v2.3.44</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -105,26 +105,6 @@
       <!-- 选中爻详情 -->
       <view class="selected-line" wx:if="{{hexagram && hexagram.selectedLineText}}">
         <text class="content">【解卦】{{hexagram.selectedLineName}}：{{hexagram.selectedLineText}}\n\n{{hexagram.selectedLineDesc}}</text>
-      </view>
-
-      <!-- 主卦基本信息 -->
-      <view class="hexagram-detail" wx:if="{{hexagram}}">
-        <view class="detail-item" wx:if="{{hexagram.guaCi}}">
-          <text class="detail-label">卦辞</text>
-          <text class="detail-value">{{hexagram.guaCi}}</text>
-        </view>
-        <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
-          <text class="detail-label">彖传</text>
-          <text class="detail-value">{{hexagram.tuanZhuan}}</text>
-        </view>
-        <view class="detail-item" wx:if="{{hexagram.xuGua}}">
-          <text class="detail-label">序卦</text>
-          <text class="detail-value">{{hexagram.xuGua}}</text>
-        </view>
-        <view class="detail-item" wx:if="{{hexagram.zaGua}}">
-          <text class="detail-label">杂卦</text>
-          <text class="detail-value">{{hexagram.zaGua}}</text>
-        </view>
       </view>
     </view>
 
