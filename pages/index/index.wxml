@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.42</text>
+    <text class="version">v2.3.43</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -59,9 +59,32 @@
       </view>
     </view>
 
-    <view class="meaning">
-      <text class="label">卦象含义</text>
-      <text class="value">{{hexagram.overallMeaning}}</text>
+    <!-- 主卦详情（卦辞、彖传、象传、序卦、杂卦、卦象含义） -->
+    <view class="hexagram-detail" wx:if="{{hexagram}}">
+      <view class="detail-item" wx:if="{{hexagram.guaCi}}">
+        <text class="detail-label">卦辞</text>
+        <text class="detail-value">{{hexagram.guaCi}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
+        <text class="detail-label">彖传</text>
+        <text class="detail-value">{{hexagram.tuanZhuan}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.xiangZhuan}}">
+        <text class="detail-label">象传</text>
+        <text class="detail-value">{{hexagram.xiangZhuan}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.xuGua}}">
+        <text class="detail-label">序卦</text>
+        <text class="detail-value">{{hexagram.xuGua}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.zaGua}}">
+        <text class="detail-label">杂卦</text>
+        <text class="detail-value">{{hexagram.zaGua}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.overallMeaning}}">
+        <text class="detail-label">卦象含义</text>
+        <text class="detail-value">{{hexagram.overallMeaning}}</text>
+      </view>
     </view>
 
     <!-- 选项卡 -->

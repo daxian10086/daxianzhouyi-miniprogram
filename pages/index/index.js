@@ -288,6 +288,7 @@ Page({
           // 添加英文字段名映射
           guaCi: hexagram.卦辞 || '',
           tuanZhuan: hexagram.彖传 || '',
+          xiangZhuan: hexagram.象传 || '',
           xuGua: hexagram.序卦 || '',
           zaGua: hexagram.杂卦 || ''
         },
