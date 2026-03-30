@@ -34,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 2500rpx;
+  min-height: 500rpx;
   min-width: 100%;
   margin-top: 50rpx;
   overflow: visible;
