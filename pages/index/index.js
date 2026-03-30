@@ -233,7 +233,7 @@ Page({
   initRewardedVideoAd() {
     if (wx.createRewardedVideoAd) {
       const rewardedVideoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-xxxxxxxxxxxxxxxx'  // 请替换为实际的广告位ID
+        adUnitId: 'adunit-b0c4ca80c737b35f'  // 请替换为实际的广告位ID
       });
 
       rewardedVideoAd.onLoad(() => {
