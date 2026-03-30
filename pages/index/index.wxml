@@ -86,21 +86,21 @@
 
       <!-- 主卦基本信息 -->
       <view class="hexagram-detail" wx:if="{{hexagram}}">
-        <view class="detail-item" wx:if="{{hexagram.卦辞}}">
+        <view class="detail-item" wx:if="{{hexagram.guaCi}}">
           <text class="detail-label">卦辞</text>
-          <text class="detail-value">{{hexagram.卦辞}}</text>
+          <text class="detail-value">{{hexagram.guaCi}}</text>
         </view>
-        <view class="detail-item" wx:if="{{hexagram.彖传}}">
+        <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
           <text class="detail-label">彖传</text>
-          <text class="detail-value">{{hexagram.彖传}}</text>
+          <text class="detail-value">{{hexagram.tuanZhuan}}</text>
         </view>
-        <view class="detail-item" wx:if="{{hexagram.序卦}}">
+        <view class="detail-item" wx:if="{{hexagram.xuGua}}">
           <text class="detail-label">序卦</text>
-          <text class="detail-value">{{hexagram.序卦}}</text>
+          <text class="detail-value">{{hexagram.xuGua}}</text>
         </view>
-        <view class="detail-item" wx:if="{{hexagram.杂卦}}">
+        <view class="detail-item" wx:if="{{hexagram.zaGua}}">
           <text class="detail-label">杂卦</text>
-          <text class="detail-value">{{hexagram.杂卦}}</text>
+          <text class="detail-value">{{hexagram.zaGua}}</text>
         </view>
       </view>
     </view>

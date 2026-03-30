@@ -284,7 +284,12 @@ Page({
           ...hexagram,
           selectedLineName,
           selectedLineText: selectedLine.text,
-          selectedLineDesc: selectedLine.desc
+          selectedLineDesc: selectedLine.desc,
+          // 添加英文字段名映射
+          guaCi: hexagram.卦辞 || '',
+          tuanZhuan: hexagram.彖传 || '',
+          xuGua: hexagram.序卦 || '',
+          zaGua: hexagram.杂卦 || ''
         },
         currentTab: 0,
         fortuneAnalysis: fortuneAnalysis,
