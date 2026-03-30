@@ -7,7 +7,7 @@ const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
 
 Page({
   data: {
-    version: 'v2.3.60',
+    version: 'v2.3.61',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
@@ -21,16 +21,6 @@ Page({
     shakeStatusText: '摇动手机开始算卦', // 摇动状态提示文字
     showShakeModal: false, // 是否显示摇动提示弹窗
     hasShared: false // 是否已解锁
-  },
-
-  onLoad(options) {
-    // 从app.js读取版本号
-    const app = getApp()
-    if (app && app.globalData && app.globalData.version) {
-      this.setData({
-        version: app.globalData.version
-      })
-    }
   },
 
   // 摇一摇检测变量
@@ -346,6 +336,14 @@ Page({
 
   // 页面加载
   onLoad() {
+    // 从app.js读取版本号
+    const app = getApp()
+    if (app && app.globalData && app.globalData.version) {
+      this.setData({
+        version: app.globalData.version
+      })
+    }
+
     // 检查小程序更新
     this.checkUpdate();
 
