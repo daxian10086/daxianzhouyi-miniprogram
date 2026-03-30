@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.51</text>
+    <text class="version">v2.3.52</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -134,36 +134,6 @@
         <view class="detail-column">
           <text class="column-title">主卦详解</text>
           <view class="hexagram-detail">
-            <view class="detail-item" wx:if="{{hexagram.guaCi}}">
-              <text class="detail-label">卦辞</text>
-              <text class="detail-value">{{hexagram.guaCi}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
-              <text class="detail-label">彖传</text>
-              <text class="detail-value">{{hexagram.tuanZhuan}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.xiangZhuan}}">
-              <text class="detail-label">象传</text>
-              <text class="detail-value">{{hexagram.xiangZhuan}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.xuGua}}">
-              <text class="detail-label">序卦</text>
-              <text class="detail-value">{{hexagram.xuGua}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.zaGua}}">
-              <text class="detail-label">杂卦</text>
-              <text class="detail-value">{{hexagram.zaGua}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.overallMeaning}}">
-              <text class="detail-label">卦象含义</text>
-              <text class="detail-value">{{hexagram.overallMeaning}}</text>
-            </view>
-          </view>
-        </view>
-        <!-- 右列：爻详解 -->
-        <view class="detail-column">
-          <text class="column-title">爻详解</text>
-          <view class="hexagram-detail">
             <view class="detail-item">
               <text class="detail-label">运势</text>
               <text class="detail-value">{{fortuneAnalysis.yunshi}}</text>
@@ -179,6 +149,24 @@
             <view class="detail-item">
               <text class="detail-label">健康</text>
               <text class="detail-value">{{fortuneAnalysis.jiankang}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 右列：爻详解 -->
+        <view class="detail-column">
+          <text class="column-title">爻详解</text>
+          <view class="hexagram-detail">
+            <view class="detail-item" wx:if="{{hexagram.selectedLineName}}">
+              <text class="detail-label">爻名</text>
+              <text class="detail-value">{{hexagram.selectedLineName}}</text>
+            </view>
+            <view class="detail-item" wx:if="{{hexagram.selectedLineText}}">
+              <text class="detail-label">爻辞</text>
+              <text class="detail-value">{{hexagram.selectedLineText}}</text>
+            </view>
+            <view class="detail-item" wx:if="{{hexagram.selectedLineDesc}}">
+              <text class="detail-label">象曰</text>
+              <text class="detail-value">{{hexagram.selectedLineDesc}}</text>
             </view>
           </view>
         </view>
