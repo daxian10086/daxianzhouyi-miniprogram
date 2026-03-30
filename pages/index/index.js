@@ -3,6 +3,7 @@ const hexagramsData1 = require('../../data/hexagrams.js');
 const hexagramsData2 = require('../../data/hexagrams31-64.js');
 const hexagramsData = [...hexagramsData1, ...hexagramsData2];
 const hexagramFortunes = require('../../data/hexagramFortunes.js');
+const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
 
 Page({
   data: {
@@ -10,6 +11,7 @@ Page({
     hexagram: null,
     currentTab: 0,
     fortuneAnalysis: null,
+    mainFortune: null,
     showDisclaimerModal: false,
     shakingClass: '',
     showShakeHint: false,
@@ -276,6 +278,12 @@ Page({
       }
 
       const fortuneAnalysis = this.generateFortuneAnalysis(hexagram.number, lineIndex);
+      const mainFortune = hexagramMainFortunes[hexagram.number] || {
+        yunshi: '暂无数据',
+        caiyun: '暂无数据',
+        jiating: '暂无数据',
+        jiankang: '暂无数据'
+      };
 
       this.setData({
         isAnimating: false,
@@ -294,6 +302,7 @@ Page({
         },
         currentTab: 0,
         fortuneAnalysis: fortuneAnalysis,
+        mainFortune: mainFortune,
         shakeStatusText: '摇动手机开始算卦',
         hasShared: false // 每次算卦都重置为未分享状态
       });

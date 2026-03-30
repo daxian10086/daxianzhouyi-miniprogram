@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.53</text>
+    <text class="version">v2.3.54</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -134,29 +134,21 @@
         <view class="detail-column">
           <text class="column-title">主卦详解</text>
           <view class="hexagram-detail">
-            <view class="detail-item" wx:if="{{hexagram.guaCi}}">
-              <text class="detail-label">卦辞</text>
-              <text class="detail-value">{{hexagram.guaCi}}</text>
+            <view class="detail-item">
+              <text class="detail-label">运势</text>
+              <text class="detail-value">{{mainFortune.yunshi}}</text>
             </view>
-            <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
-              <text class="detail-label">彖传</text>
-              <text class="detail-value">{{hexagram.tuanZhuan}}</text>
+            <view class="detail-item">
+              <text class="detail-label">财运</text>
+              <text class="detail-value">{{mainFortune.caiyun}}</text>
             </view>
-            <view class="detail-item" wx:if="{{hexagram.xiangZhuan}}">
-              <text class="detail-label">象传</text>
-              <text class="detail-value">{{hexagram.xiangZhuan}}</text>
+            <view class="detail-item">
+              <text class="detail-label">家庭</text>
+              <text class="detail-value">{{mainFortune.jiating}}</text>
             </view>
-            <view class="detail-item" wx:if="{{hexagram.xuGua}}">
-              <text class="detail-label">序卦</text>
-              <text class="detail-value">{{hexagram.xuGua}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.zaGua}}">
-              <text class="detail-label">杂卦</text>
-              <text class="detail-value">{{hexagram.zaGua}}</text>
-            </view>
-            <view class="detail-item" wx:if="{{hexagram.overallMeaning}}">
-              <text class="detail-label">卦象含义</text>
-              <text class="detail-value">{{hexagram.overallMeaning}}</text>
+            <view class="detail-item">
+              <text class="detail-label">健康</text>
+              <text class="detail-value">{{mainFortune.jiankang}}</text>
             </view>
           </view>
         </view>
