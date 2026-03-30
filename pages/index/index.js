@@ -41,7 +41,7 @@ Page({
     if (typeof index === 'string') {
       index = parseInt(index, 10);
     }
-    if (isNaN(index) || index < 0 || index > 2) {
+    if (isNaN(index) || index < 0 || index > 3) {
       return;
     }
     this.setData({ currentTab: index });
