@@ -3,7 +3,8 @@
   "versionDate": "2026-03-30",
   "pages": [
     "pages/index/index",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/query/query"
   ],
   "window": {
     "backgroundTextStyle": "light",

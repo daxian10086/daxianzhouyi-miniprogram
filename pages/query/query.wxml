@@ -1,0 +1,168 @@
+<!--pages/query/query.wxml-->
+<view class="container">
+  <!-- 查询输入区 -->
+  <view class="query-section">
+    <view class="input-group">
+      <view class="label">卦序（1-64）</view>
+      <input
+        class="input"
+        type="number"
+        placeholder="请输入卦序"
+        value="{{guaNumber}}"
+        bindinput="onGuaNumberInput"
+        maxlength="2"
+      />
+    </view>
+
+    <view class="input-group">
+      <view class="label">选择爻位</view>
+      <picker
+        mode="selector"
+        range="{{yaoOptions}}"
+        range-key="label"
+        value="{{yaoPosition}}"
+        bindchange="onYaoPositionChange"
+      >
+        <view class="picker">
+          {{yaoOptions[yaoPosition].label}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="button-group">
+      <button class="query-btn primary" bindtap="onQuery">查询</button>
+      <button class="query-btn secondary" bindtap="queryMain">只查主卦</button>
+    </view>
+  </view>
+
+  <!-- 查询结果区 -->
+  <view wx:if="{{showResult}}" class="result-section">
+    <!-- 卦象标题 -->
+    <view class="hexagram-header">
+      <text class="hexagram-title">第{{hexagram.卦序}}卦：{{hexagram.卦名}}</text>
+      <text class="hexagram-symbol">{{hexagram.卦象}}</text>
+    </view>
+
+    <!-- 选项卡 -->
+    <view class="tabs">
+      <view
+        class="tab {{currentTab === 0 ? 'active' : ''}}"
+        data-index="0"
+        bindtap="switchTab"
+      >
+        {{yaoPosition === 0 ? '主卦详解' : '爻详解'}}
+      </view>
+      <view
+        class="tab {{currentTab === 1 ? 'active' : ''}}"
+        data-index="1"
+        bindtap="switchTab"
+        wx:if="{{yaoPosition === 0}}"
+      >
+        爻位选择
+      </view>
+    </view>
+
+    <!-- 内容区 -->
+    <view class="content-area">
+      <!-- 主卦详情 -->
+      <view wx:if="{{currentTab === 0 && yaoPosition === 0}}" class="main-content">
+        <!-- 序卦杂卦 -->
+        <view class="detail-item">
+          <text class="item-label">序卦</text>
+          <text class="item-value">{{hexagram.序卦}}</text>
+        </view>
+        <view class="detail-item">
+          <text class="item-label">杂卦</text>
+          <text class="item-value">{{hexagram.杂卦}}</text>
+        </view>
+
+        <!-- 卦辞彖传象传 -->
+        <view class="detail-item">
+          <text class="item-label">卦辞</text>
+          <text class="item-value">{{hexagram.卦辞}}</text>
+        </view>
+        <view class="detail-item">
+          <text class="item-label">彖传</text>
+          <text class="item-value">{{hexagram.彖传}}</text>
+        </view>
+        <view class="detail-item">
+          <text class="item-label">象传</text>
+          <text class="item-value">{{hexagram.象传}}</text>
+        </view>
+
+        <!-- 卦象含义 -->
+        <view class="detail-item">
+          <text class="item-label">卦象含义</text>
+          <text class="item-value">{{hexagram.卦象含义}}</text>
+        </view>
+
+        <!-- 主卦运势 -->
+        <view wx:if="{{fortune}}" class="fortune-section">
+          <view class="fortune-title">运势分析</view>
+          <view class="detail-item">
+            <text class="item-label">运势</text>
+            <text class="item-value">{{fortune.运势}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">财运</text>
+            <text class="item-value">{{fortune.财运}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">家庭</text>
+            <text class="item-value">{{fortune.家庭}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">健康</text>
+            <text class="item-value">{{fortune.健康}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 爻详解 -->
+      <view wx:if="{{currentTab === 0 && yaoPosition > 0}}" class="yao-content">
+        <view class="yao-info">
+          <text class="yao-name">{{hexagram['爻名' + yaoPosition]}}</text>
+          <text class="yao-text">{{hexagram['爻辞' + yaoPosition]}}</text>
+        </view>
+        <view class="yao-xiang">
+          <text class="xiang-label">象曰：</text>
+          <text class="xiang-value">{{hexagram['象曰' + yaoPosition]}}</text>
+        </view>
+
+        <!-- 爻位运势 -->
+        <view wx:if="{{fortune}}" class="fortune-section">
+          <view class="fortune-title">运势分析</view>
+          <view class="detail-item">
+            <text class="item-label">运势</text>
+            <text class="item-value">{{fortune.运势}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">财运</text>
+            <text class="item-value">{{fortune.财运}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">家庭</text>
+            <text class="item-value">{{fortune.家庭}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="item-label">健康</text>
+            <text class="item-value">{{fortune.健康}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 爻位选择 -->
+      <view wx:if="{{currentTab === 1 && yaoPosition === 0}}" class="yao-selector">
+        <view class="yao-item" wx:for="{{[1,2,3,4,5,6]}}" wx:key="index" bindtap="onYaoPositionChange" data-value="{{index}}">
+          <text class="yao-name">{{hexagram['爻名' + index]}}</text>
+          <text class="yao-preview">{{hexagram['爻辞' + index].substring(0, 20)}}...</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{!showResult}}" class="empty-state">
+    <text class="empty-text">输入卦序和爻位进行查询</text>
+  </view>
+</view>

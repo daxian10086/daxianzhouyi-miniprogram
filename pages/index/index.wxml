@@ -30,6 +30,11 @@
     算一卦
   </button>
 
+  <!-- 手动查询按钮 -->
+  <navigator url="/pages/query/query" class="query-nav">
+    <button class="query-btn">手动查询</button>
+  </navigator>
+
   <!-- 免责声明按钮 -->
   <view class="disclaimer-btn" bindtap="showDisclaimer">
     <text class="disclaimer-text">⚠️ 免责声明</text>
