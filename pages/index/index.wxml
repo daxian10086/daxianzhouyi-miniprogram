@@ -3,7 +3,7 @@
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
-    <text class="version">v2.3.49</text>
+    <text class="version">v2.3.50</text>
   </view>
 
   <!-- 步骤1: 摇动手机开始算卦提示 -->
@@ -109,7 +109,7 @@
     <view class="tab-content" wx:if="{{currentTab == 1}}">
       <view class="hexagram-detail" wx:if="{{hexagram}}">
         <view class="detail-item" wx:if="{{hexagram.selectedLineName}}">
-          <text class="line" style="display: block;">{{hexagram.selectedLineName}}</text>
+          <text class="line" style="display: block; color: #8B4513; font-weight: bold;">{{hexagram.selectedLineName}}</text>
         </view>
         <view class="detail-item" wx:if="{{hexagram.selectedLineText}}">
           <text class="detail-label">爻辞</text>
