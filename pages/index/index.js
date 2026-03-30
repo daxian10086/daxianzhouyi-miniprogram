@@ -15,7 +15,8 @@ Page({
     shakingClass: '',
     shakeThrottle: false,
     lastShakeTime: 0,
-    shakeThreshold: 3000
+    shakeThreshold: 3000,
+    isUnlocked: false
   },
 
   // 切换选项卡
@@ -57,6 +58,15 @@ Page({
 
   // 算卦
   castHexagram() {
+    // 检查是否已解锁
+    if (!this.data.isUnlocked) {
+      wx.showToast({
+        title: '请先解锁',
+        icon: 'none'
+      });
+      return;
+    }
+
     if (this.data.isAnimating) return;
     
     this.setData({ 
@@ -134,6 +144,9 @@ Page({
       this.setData({ showDisclaimerModal: true });
     }
 
+    // 初始化激励视频广告
+    this.initRewardedVideoAd();
+
     // 开启摇一摇监听
     this.startShakeListen();
   },
@@ -142,6 +155,10 @@ Page({
   onUnload() {
     // 关闭摇一摇监听
     this.stopShakeListen();
+    // 销毁激励视频广告
+    if (this.data.rewardedVideoAd) {
+      this.data.rewardedVideoAd.destroy();
+    }
   },
 
   // 页面隐藏
@@ -210,6 +227,73 @@ Page({
   // 显示免责声明
   showDisclaimer() {
     this.setData({ showDisclaimerModal: true });
+  },
+
+  // 初始化激励视频广告
+  initRewardedVideoAd() {
+    if (wx.createRewardedVideoAd) {
+      const rewardedVideoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-xxxxxxxxxxxxxxxx'  // 请替换为实际的广告位ID
+      });
+
+      rewardedVideoAd.onLoad(() => {
+        console.log('激励视频广告加载成功');
+      });
+
+      rewardedVideoAd.onError((err) => {
+        console.error('激励视频广告加载失败', err);
+      });
+
+      rewardedVideoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          // 用户看完广告，解锁功能
+          this.setData({ isUnlocked: true });
+          wx.showToast({
+            title: '解锁成功',
+            icon: 'success'
+          });
+        } else {
+          wx.showToast({
+            title: '未看完广告',
+            icon: 'none'
+          });
+        }
+      });
+
+      this.setData({ rewardedVideoAd });
+    }
+  },
+
+  // 立即解锁（点击事件）
+  handleWaitUnlock() {
+    if (this.data.isUnlocked) {
+      wx.showToast({
+        title: '已解锁',
+        icon: 'none'
+      });
+      return;
+    }
+
+    if (!this.data.rewardedVideoAd) {
+      wx.showToast({
+        title: '广告加载失败',
+        icon: 'none'
+      });
+      return;
+    }
+
+    this.data.rewardedVideoAd.show().catch(err => {
+      // 如果广告展示失败，尝试重新加载
+      this.data.rewardedVideoAd.load().then(() => {
+        return this.data.rewardedVideoAd.show();
+      }).catch(err => {
+        console.error('广告展示失败', err);
+        wx.showToast({
+          title: '广告展示失败',
+          icon: 'none'
+        });
+      });
+    });
   },
 
   // 隐藏免责声明

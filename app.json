@@ -9,6 +9,17 @@
     "navigationBarTitleText": "大仙周易",
     "navigationBarTextStyle": "black"
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于摇一摇功能"
+    },
+    "scope.accelerometer": {
+      "desc": "用于摇一摇功能"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
