@@ -1,7 +1,7 @@
 .container {
   padding: 20rpx;
   min-height: 100vh;
-  background: linear-gradient(180deg, #FFF8F0 0%, #F5E6D3 50%, #E8D4BC 100%);
+  background: #C41E3A;
 }
 
 .header {
@@ -101,10 +101,10 @@
 .result {
   margin-top: 48rpx;
   padding: 40rpx;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5E6D3 50%, #E8D4BC 100%);
+  background: #C41E3A;
   border-radius: 24rpx;
   border: 2rpx solid #D4A574;
-  box-shadow: 0 8rpx 24rpx rgba(139, 69, 19, 0.15);
+  
 }
 
 .hexagram-info {
@@ -198,7 +198,7 @@
   margin-top: 48rpx;
   border-radius: 12rpx;
   overflow: hidden;
-  background: rgba(212, 165, 116, 0.1);
+  background: rgba(0,0,0,0);
   border: 1rpx solid #D4A574;
 }
 
@@ -213,7 +213,7 @@
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+  background: #C41E3A;
   color: white;
   font-weight: bold;
 }
@@ -359,7 +359,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -419,7 +419,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,12 +490,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #FFF8DC 0%, #FFECB3 100%);
+  background: #C41E3A;
   border-radius: 32rpx;
   margin: 48rpx 32rpx;
   padding: 64rpx 48rpx;
   border: 4rpx solid #8B4513;
-  box-shadow: 0 8rpx 32rpx rgba(139, 69, 19, 0.2);
+  
 }
 
 .shake-icon-large {
@@ -571,7 +571,7 @@
   align-items: center;
   justify-content: center;
   padding: 80rpx 40rpx;
-  background: linear-gradient(135deg, #FFF8DC 0%, #FFECB3 100%);
+  background: #C41E3A;
   border-radius: 24rpx;
   border: 3rpx dashed #8B4513;
 }
@@ -607,7 +607,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -679,7 +679,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -719,7 +719,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.4);
+  
   animation: pulseCountdown 1s ease-in-out infinite;
 }
 
@@ -815,7 +815,7 @@
   padding: 32rpx;
   background: white;
   border-radius: 16rpx;
-  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+  
 }
 
 .input-row {
