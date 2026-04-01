@@ -1,13 +1,14 @@
-/* components/shared-result/index.wxss - 共享样式，两个页面都引用此组件 */
+/* components/shared-result/index.wxss - 明亮简洁扁平化风格 */
 
 /* ---------- 选项卡 ---------- */
 .tabs {
   display: flex;
-  margin-top: 48rpx;
-  border-radius: 12rpx;
+  margin-top: 32rpx;
+  border-radius: 16rpx;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1rpx solid #D4A574;
+  background: #FFFFFF;
+  border: 2rpx solid #E8E8E8;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
 }
 
 .tab {
@@ -16,70 +17,72 @@
   text-align: center;
   font-size: 28rpx;
   background: transparent;
-  color: #5D3A1A;
-  transition: all 0.3s ease;
+  color: #666666;
+  transition: all 0.2s ease;
 }
 
 .tab.active {
   background: #C41E3A;
-  color: white;
-  font-weight: bold;
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .tab-content {
-  margin-top: 32rpx;
+  margin-top: 24rpx;
 }
 
 /* ---------- 卦象详情 ---------- */
 .hexagram-detail {
-  padding: 24rpx;
+  padding: 0;
 }
 
 .detail-item {
-  margin-bottom: 24rpx;
-  padding: 16rpx;
-  background: white;
+  margin-bottom: 16rpx;
+  padding: 20rpx;
+  background: #FFFFFF;
   border-radius: 12rpx;
+  border: 1rpx solid #EEEEEE;
 }
 
 .detail-label {
-  display: block;
-  font-size: 28rpx;
-  color: #8B4513;
-  font-weight: bold;
-  margin-bottom: 8rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 12rpx;
 }
 
 .detail-value {
-  display: block;
-  font-size: 30rpx;
-  color: #333;
+  display: inline;
+  font-size: 28rpx;
+  color: #333333;
   line-height: 1.6;
 }
 
 .line {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin-bottom: 16rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+  color: #333333;
 }
 
 /* ---------- 详解两列布局 ---------- */
 .detail-columns {
   display: flex;
   flex-direction: row;
+  gap: 16rpx;
 }
 
 .detail-column {
   flex: 1;
-  padding: 16rpx;
+  padding: 0;
 }
 
 .column-title {
   display: block;
-  font-size: 28rpx;
-  color: #8B4513;
-  font-weight: bold;
-  margin-bottom: 16rpx;
+  font-size: 26rpx;
+  color: #C41E3A;
+  font-weight: 600;
+  margin-bottom: 12rpx;
   text-align: center;
 }
 
@@ -89,28 +92,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60rpx;
-  background: rgba(255,255,255,0.9);
-  border-radius: 24rpx;
-  margin-top: 32rpx;
+  padding: 48rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  margin-top: 24rpx;
+  border: 1rpx solid #EEEEEE;
 }
 
 .blur-text {
-  font-size: 36rpx;
-  margin-bottom: 16rpx;
+  font-size: 32rpx;
+  margin-bottom: 12rpx;
+  color: #333333;
 }
 
 .blur-hint {
-  font-size: 26rpx;
-  color: #666;
-  margin-bottom: 32rpx;
+  font-size: 24rpx;
+  color: #999999;
+  margin-bottom: 24rpx;
 }
 
 .share-btn {
   background: #C41E3A;
-  color: white;
+  color: #FFFFFF;
   font-size: 28rpx;
   padding: 20rpx 48rpx;
-  border-radius: 16rpx;
+  border-radius: 12rpx;
   border: none;
+  font-weight: 500;
 }
