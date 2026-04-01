@@ -83,7 +83,7 @@
   width: 100%;
   max-width: 600rpx;
   padding: 60rpx 40rpx;
-  background: #C41E3A; 0%, rgba(0,0,0,0) 100%);
+  background: #C41E3A;
   border-radius: 24rpx;
   border: 2rpx solid #D4A574;
   
@@ -471,7 +471,7 @@
 
 /* ========== 选中的爻 ========== */
 .selected-line {
-  background: #C41E3A; 0%, rgba(0,0,0,0) 100%);
+  background: #C41E3A;
   padding: 32rpx;
   border-radius: 16rpx;
   border: 2rpx solid #C41E3A;
@@ -742,7 +742,7 @@
   align-items: center;
   justify-content: center;
   padding: 60rpx 40rpx;
-  background: #C41E3A; 0%, rgba(0,0,0,0) 100%);
+  background: #C41E3A;
   border-radius: 16rpx;
   border: 2rpx solid #D4A574;
   margin-top: 24rpx;
