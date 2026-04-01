@@ -26,6 +26,11 @@ Page({
   },
 
   // 切换选项卡
+  // 组件标签切换事件
+  onTabChange(e) {
+    this.setData({ currentTab: e.detail.index });
+  },
+
   switchTab(e) {
     let index = e.currentTarget.dataset.index;
     if (typeof index === 'string') {

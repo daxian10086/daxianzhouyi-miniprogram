@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "大仙周易",
-  "usingComponents": {}
+  "usingComponents": {
+    "shared-result": "/components/shared-result/index"
+  }
 }

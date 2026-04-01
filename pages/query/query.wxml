@@ -1,4 +1,3 @@
-<!--pages/query/query.wxml-->
 <view class="container">
   <!-- 标题区域 -->
   <view class="header">
@@ -31,7 +30,7 @@
     <text class="disclaimer-text">⚠️ 免责声明</text>
   </view>
 
-  <!-- 结果区域 -->
+  <!-- 结果区域 - 使用共享组件 -->
   <view class="result" wx:if="{{hexagram}}">
     <!-- 卦象信息 -->
     <view class="hexagram-info">
@@ -55,120 +54,16 @@
       </view>
     </view>
 
-    <!-- 选项卡 -->
-    <view class="tabs">
-      <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
-        主卦
-      </view>
-      <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
-        爻
-      </view>
-      <view class="tab {{currentTab == 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
-        详解
-      </view>
-    </view>
-
-    <!-- 主卦（第一个标签） -->
-    <view class="tab-content" wx:if="{{currentTab == 0}}">
-      <view class="hexagram-detail" wx:if="{{hexagram}}">
-        <view class="detail-item">
-          <text class="detail-label">序卦</text>
-          <text class="detail-value">{{hexagram.xuGua}}</text>
-        </view>
-        <view class="detail-item">
-          <text class="detail-label">杂卦</text>
-          <text class="detail-value">{{hexagram.zaGua}}</text>
-        </view>
-        <view class="detail-item">
-          <text class="detail-label">卦辞</text>
-          <text class="detail-value">{{hexagram.guaCi}}</text>
-        </view>
-        <view class="detail-item">
-          <text class="detail-label">彖传</text>
-          <text class="detail-value">{{hexagram.tuanZhuan}}</text>
-        </view>
-        <view class="detail-item">
-          <text class="detail-label">象传</text>
-          <text class="detail-value">{{hexagram.xiangZhuan}}</text>
-        </view>
-        <view class="detail-item">
-          <text class="detail-label">卦象含义</text>
-          <text class="detail-value">{{hexagram.overallMeaning}}</text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 选中爻（第二个标签） -->
-    <view class="tab-content" wx:if="{{currentTab == 1}}">
-      <view class="hexagram-detail" wx:if="{{hexagram}}">
-        <view class="detail-item" wx:if="{{hexagram.selectedLineName}}">
-          <text class="line" style="display: block; color: #8B4513; font-weight: bold;">{{hexagram.selectedLineName}}</text>
-        </view>
-        <view class="detail-item" wx:if="{{hexagram.selectedLineText}}">
-          <text class="detail-label">爻辞</text>
-          <text class="detail-value">{{hexagram.selectedLineText}}</text>
-        </view>
-        <view class="detail-item" wx:if="{{hexagram.selectedLineDesc}}">
-          <text class="detail-label">象曰</text>
-          <text class="detail-value">{{hexagram.selectedLineDesc}}</text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 详解（第三个标签） -->
-    <view class="tab-content" wx:if="{{currentTab == 2}}">
-      <view class="share-blur" wx:if="{{!hasShared}}">
-        <text class="blur-text">🔒 内容已隐藏</text>
-        <text class="blur-hint">观看广告即可查看运势详解</text>
-        <button class="share-btn" bindtap="handleWaitUnlock">立即解锁</button>
-      </view>
-      <view class="detail-columns" wx:if="{{hasShared}}">
-        <!-- 左列：主卦详解 -->
-        <view class="detail-column">
-          <text class="column-title">主卦详解</text>
-          <view class="hexagram-detail">
-            <view class="detail-item">
-              <text class="detail-label">运势</text>
-              <text class="detail-value">{{mainFortune.yunshi}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">财运</text>
-              <text class="detail-value">{{mainFortune.caiyun}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">家庭</text>
-              <text class="detail-value">{{mainFortune.jiating}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">健康</text>
-              <text class="detail-value">{{mainFortune.jiankang}}</text>
-            </view>
-          </view>
-        </view>
-        <!-- 右列：爻详解 -->
-        <view class="detail-column">
-          <text class="column-title">爻详解</text>
-          <view class="hexagram-detail">
-            <view class="detail-item">
-              <text class="detail-label">运势</text>
-              <text class="detail-value">{{fortuneAnalysis.yunshi}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">财运</text>
-              <text class="detail-value">{{fortuneAnalysis.caiyun}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">家庭</text>
-              <text class="detail-value">{{fortuneAnalysis.jiating}}</text>
-            </view>
-            <view class="detail-item">
-              <text class="detail-label">健康</text>
-              <text class="detail-value">{{fortuneAnalysis.jiankang}}</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+    <!-- 共享结果组件 -->
+    <shared-result 
+      hexagram="{{hexagram}}"
+      fortuneAnalysis="{{fortuneAnalysis}}"
+      mainFortune="{{mainFortune}}"
+      hasShared="{{hasShared}}"
+      currentTab="{{currentTab}}"
+      bind:tabchange="onTabChange"
+      bind:unlock="handleWaitUnlock"
+    />
   </view>
 </view>
 

@@ -1,0 +1,116 @@
+/* components/shared-result/index.wxss - 共享样式，两个页面都引用此组件 */
+
+/* ---------- 选项卡 ---------- */
+.tabs {
+  display: flex;
+  margin-top: 48rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1rpx solid #D4A574;
+}
+
+.tab {
+  flex: 1;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: transparent;
+  color: #5D3A1A;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: #C41E3A;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-content {
+  margin-top: 32rpx;
+}
+
+/* ---------- 卦象详情 ---------- */
+.hexagram-detail {
+  padding: 24rpx;
+}
+
+.detail-item {
+  margin-bottom: 24rpx;
+  padding: 16rpx;
+  background: white;
+  border-radius: 12rpx;
+}
+
+.detail-label {
+  display: block;
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.detail-value {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.line {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+/* ---------- 详解两列布局 ---------- */
+.detail-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-column {
+  flex: 1;
+  padding: 16rpx;
+}
+
+.column-title {
+  display: block;
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+/* ---------- 解锁区域 ---------- */
+.share-blur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx;
+  background: rgba(255,255,255,0.9);
+  border-radius: 24rpx;
+  margin-top: 32rpx;
+}
+
+.blur-text {
+  font-size: 36rpx;
+  margin-bottom: 16rpx;
+}
+
+.blur-hint {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 32rpx;
+}
+
+.share-btn {
+  background: #C41E3A;
+  color: white;
+  font-size: 28rpx;
+  padding: 20rpx 48rpx;
+  border-radius: 16rpx;
+  border: none;
+}

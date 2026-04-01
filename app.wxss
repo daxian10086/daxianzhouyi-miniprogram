@@ -3,7 +3,7 @@ page {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   color: #333;
-  background-color: #F5F5DC;
+  background-color: #F5F5F5;
 }
 
 page view {
@@ -18,8 +18,47 @@ page text {
   box-sizing: border-box;
 }
 
+/* ========== 统一共享样式 - 摇一卦和手动查询完全同步 ========== */
 
-/* ========== 共享标签样式 ========== */
+/* ---------- 页面基础 ---------- */
+page {
+  background: #F5F5F5;
+}
+
+.container {
+  background: #F5F5F5;
+  padding: 20rpx;
+  min-height: 100vh;
+}
+
+/* ---------- 标题区域 ---------- */
+.header {
+  text-align: center;
+  padding: 40rpx 20rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #C41E3A;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #8B4513;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+}
+
+/* ---------- 选项卡 ---------- */
 .tabs {
   display: flex;
   margin-top: 48rpx;
@@ -49,7 +88,7 @@ page text {
   margin-top: 32rpx;
 }
 
-/* ========== 共享详情样式 ========== */
+/* ---------- 卦象详情 ---------- */
 .hexagram-detail {
   padding: 24rpx;
 }
@@ -76,13 +115,7 @@ page text {
   line-height: 1.6;
 }
 
-.line {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin-bottom: 16rpx;
-}
-
-/* ========== 共享详解列样式 ========== */
+/* ---------- 详解两列布局 ---------- */
 .detail-columns {
   display: flex;
   flex-direction: row;
@@ -102,7 +135,7 @@ page text {
   text-align: center;
 }
 
-/* ========== 共享解锁样式 ========== */
+/* ---------- 解锁区域 ---------- */
 .share-blur {
   display: flex;
   flex-direction: column;
@@ -134,13 +167,14 @@ page text {
   border: none;
 }
 
-/* ========== 共享按钮样式 ========== */
+/* ---------- 按钮统一样式 ---------- */
 .cast-btn,
 .query-btn {
+  margin: 32rpx;
+  padding: 32rpx;
   background: #C41E3A;
   color: white;
   font-size: 40rpx;
-  padding: 32rpx;
   border-radius: 16rpx;
   text-align: center;
   font-weight: bold;
@@ -148,7 +182,69 @@ page text {
   border: 2rpx solid #D4A574;
 }
 
-/* ========== 共享免责声明弹窗 ========== */
+/* ---------- 卦象信息区域 ---------- */
+.hexagram-info {
+  display: flex;
+  margin-bottom: 32rpx;
+  padding: 24rpx;
+  background: white;
+  border-radius: 16rpx;
+}
+
+.hexagram-left {
+  flex: 1;
+}
+
+.hexagram-right {
+  flex: 1;
+}
+
+.number {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.name-line {
+  margin-top: 8rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #C41E3A;
+}
+
+.line {
+  font-size: 28rpx;
+  color: #8B4513;
+  margin-left: 16rpx;
+}
+
+.trigram-item {
+  margin-bottom: 8rpx;
+}
+
+.trigram-item .label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.trigram-item .value {
+  font-size: 26rpx;
+  color: #333;
+}
+
+/* ---------- 免责声明 ---------- */
+.disclaimer-btn {
+  text-align: center;
+  padding: 20rpx;
+}
+
+.disclaimer-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
 .disclaimer-modal {
   position: fixed;
   top: 0;
@@ -206,70 +302,35 @@ page text {
   border: none;
 }
 
-
-/* ========== 共享页面基础样式 ========== */
-.container {
-  padding: 20rpx;
-  min-height: 100vh;
-  background: #F5F5F5;
-  position: relative;
+/* ---------- 查询页面专用 ---------- */
+.query-section {
+  margin: 32rpx;
+  padding: 32rpx;
+  background: white;
+  border-radius: 16rpx;
 }
 
-/* 背景纹理 - 备用 */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
+.input-row {
+  display: flex;
+  margin-bottom: 24rpx;
 }
 
-/* ========== 标题区域 ========== */
-.header {
-  text-align: center;
-  padding: 40rpx 20rpx;
+.input-group {
+  flex: 1;
+  margin-right: 16rpx;
 }
 
-.title {
-  font-size: 48rpx;
-  font-weight: bold;
-  color: #C41E3A;
-  display: block;
-  margin-bottom: 16rpx;
-}
-
-.subtitle {
+.input-group .label {
   font-size: 28rpx;
   color: #8B4513;
-  display: block;
-  margin-bottom: 16rpx;
-}
-
-.version {
-  font-size: 24rpx;
-  color: #999;
+  font-weight: bold;
+  margin-bottom: 8rpx;
   display: block;
 }
 
-
-/* ========== 强制统一页面背景 ========== */
-page,
-.container {
-  background: #F5F5F5 !important;
-}
-
-
-/* ========== 强制统一样式 - 两个页面背景必须一致 ========== */
-page,
-.container {
-  background: #F5F5F5 !important;
-}
-
-/* 两个页面的cast-btn必须一致 */
-.cast-btn,
-.query-btn {
-  background: #C41E3A !important;
-  color: white !important;
+.picker {
+  border: 2rpx solid #ddd;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  background: white;
 }
