@@ -205,3 +205,50 @@ page text {
   border-radius: 16rpx;
   border: none;
 }
+
+
+/* ========== 共享页面基础样式 ========== */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: #F5F5F5;
+  position: relative;
+}
+
+/* 背景纹理 - 备用 */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* ========== 标题区域 ========== */
+.header {
+  text-align: center;
+  padding: 40rpx 20rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #C41E3A;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #8B4513;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+}
