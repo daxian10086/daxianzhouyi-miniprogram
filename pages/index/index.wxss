@@ -4,21 +4,12 @@
 .container {
   padding: 20rpx;
   min-height: 100vh;
-  background: #C41E3A;
+  background: #F5F5F5;
   position: relative;
 }
 
 /* 古典纹理背景 */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-  pointer-events: none;
-}
+.container
 
 /* ========== 标题区域 ========== */
 .header {
@@ -44,7 +35,7 @@
   font-weight: bold;
   color: #8B4513;
   /* 古典阴影效果 */
-  text-shadow: 2rpx 2rpx 4rpx rgba(0,0,0,0);
+  text-shadow: 2rpx 2rpx 4rpx rgba(139, 69, 19, 0.3);
   /* 古典字体效果 */
   letter-spacing: 8rpx;
 }
@@ -83,7 +74,7 @@
   width: 100%;
   max-width: 600rpx;
   padding: 60rpx 40rpx;
-  background: #C41E3A;
+  background: #FFFFFF;
   border-radius: 24rpx;
   border: 2rpx solid #D4A574;
   
@@ -95,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #C41E3A;
+  background: #8B4513;
   border-radius: 50%;
   
 }
@@ -145,7 +136,7 @@
   height: auto;
   animation: shake 0.5s ease-in-out infinite;
   will-change: transform;
-  filter: drop-shadow(4rpx 4rpx 8rpx rgba(0,0,0,0));
+  filter: drop-shadow(4rpx 4rpx 8rpx rgba(139, 69, 19, 0.3));
 }
 
 .shaking-text {
@@ -190,24 +181,11 @@
 }
 
 /* 丝绸般的高光 */
-.cast-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: #C41E3A; 0%, 
-    rgba(0,0,0,0) 50%,
-    transparent 100%
-  );
-  border-radius: 16rpx 16rpx 0 0;
-  pointer-events: none;
-}
+
 
 .cast-btn[disabled] {
   opacity: 0.5;
-  background: #C41E3A;
+  background: #888888;
   
 }
 
@@ -233,23 +211,11 @@
 }
 
 /* 边框高光 */
-.query-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: #C41E3A; 0%, 
-    transparent 100%
-  );
-  border-radius: 14rpx 14rpx 0 0;
-  pointer-events: none;
-}
+
 
 .query-btn[disabled] {
   opacity: 0.5;
-  background: #C41E3A;
+  background: #888888;
   
   border-color: transparent;
   color: white;
@@ -274,7 +240,7 @@
 .result {
   margin-top: 48rpx;
   padding: 40rpx;
-  background: #C41E3A;
+  background: #F5E6D3;
   border-radius: 24rpx;
   border: 2rpx solid #D4A574;
   
@@ -318,7 +284,7 @@
   bottom: 0;
   left: 50%;
   width: 2rpx;
-  background: #C41E3A;
+  background: #D4A574;
 }
 
 .hexagram-left {
@@ -346,7 +312,7 @@
   font-size: 64rpx;
   font-weight: bold;
   color: #E74C3C;
-  text-shadow: 2rpx 2rpx 4rpx rgba(0,0,0,0);
+  text-shadow: 2rpx 2rpx 4rpx rgba(231, 76, 60, 0.3);
 }
 
 .hexagram-left .line {
@@ -367,7 +333,7 @@
   padding: 12rpx;
   width: 100%;
   box-sizing: border-box;
-  background: rgba(0,0,0,0);
+  background: rgba(212, 165, 116, 0.1);
   border-radius: 8rpx;
   border-left: 3rpx solid #D4A574;
 }
@@ -393,7 +359,7 @@
 .meaning {
   margin-top: 32rpx;
   padding: 24rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(212, 165, 116, 0.08);
   border-radius: 12rpx;
   border-left: 4rpx solid #C41E3A;
 }
@@ -418,7 +384,7 @@
   margin-top: 48rpx;
   border-radius: 12rpx;
   overflow: hidden;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0.3);
   border: 1rpx solid #D4A574;
 }
 
@@ -446,7 +412,7 @@
 .line-item {
   margin-bottom: 40rpx;
   padding-bottom: 40rpx;
-  border-bottom: 2rpx dashed rgba(0,0,0,0);
+  border-bottom: 2rpx dashed rgba(212, 165, 116, 0.3);
 }
 
 .line-item:last-child {
@@ -496,9 +462,9 @@
 .main-fortune {
   margin-top: 32rpx;
   padding: 24rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(212, 165, 116, 0.05);
   border-radius: 12rpx;
-  border: 1rpx solid rgba(0,0,0,0);
+  border: 1rpx solid rgba(212, 165, 116, 0.3);
 }
 
 .detail-item {
@@ -566,7 +532,7 @@
 /* ========== 详细列右 ========== */
 .detail-column-right {
   padding-left: 20rpx;
-  border-left: 2rpx solid rgba(0,0,0,0);
+  border-left: 2rpx solid rgba(212, 165, 116, 0.3);
 }
 
 .detail-column-right .column-title {
@@ -586,7 +552,7 @@
   color: #5D3A1A;
   display: inline-block;
   padding: 4rpx 12rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(196, 30, 58, 0.2);
   border-radius: 6rpx;
   margin-right: 8rpx;
 }
@@ -629,7 +595,7 @@
 .fortune-item {
   width: calc(50% - 8rpx);
   padding: 20rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(139, 69, 19, 0.05);
   border-radius: 12rpx;
   border: 1rpx solid #E8DCC8;
 }
@@ -653,7 +619,7 @@
 .gua-ci-section {
   margin-top: 32rpx;
   padding: 24rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(139, 69, 19, 0.05);
   border-radius: 12rpx;
   border: 1rpx solid #D4A574;
 }
@@ -677,7 +643,7 @@
 .xu-za-section {
   margin-top: 24rpx;
   padding: 20rpx;
-  background: rgba(0,0,0,0);
+  background: rgba(139, 69, 19, 0.03);
   border-radius: 8rpx;
   border-left: 4rpx solid #D4A574;
 }
@@ -763,7 +729,7 @@
 
 .share-btn {
   padding: 24rpx 60rpx;
-  background: #C41E3A;
+  background: #8B4513;
   color: white;
   font-size: 32rpx;
   border-radius: 12rpx;
@@ -780,7 +746,7 @@
   left: 0;
   right: 0;
   height: 50%;
-  background: #C41E3A; 0%, transparent 100%);
+  background: #C41E3A;
   border-radius: 12rpx 12rpx 0 0;
   pointer-events: none;
 }
