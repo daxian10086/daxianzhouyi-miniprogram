@@ -17,3 +17,191 @@ page button {
 page text {
   box-sizing: border-box;
 }
+
+
+/* ========== 共享标签样式 ========== */
+.tabs {
+  display: flex;
+  margin-top: 48rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1rpx solid #D4A574;
+}
+
+.tab {
+  flex: 1;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: transparent;
+  color: #5D3A1A;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: #C41E3A;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-content {
+  margin-top: 32rpx;
+}
+
+/* ========== 共享详情样式 ========== */
+.hexagram-detail {
+  padding: 24rpx;
+}
+
+.detail-item {
+  margin-bottom: 24rpx;
+  padding: 16rpx;
+  background: white;
+  border-radius: 12rpx;
+}
+
+.detail-label {
+  display: block;
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.detail-value {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.line {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+/* ========== 共享详解列样式 ========== */
+.detail-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-column {
+  flex: 1;
+  padding: 16rpx;
+}
+
+.column-title {
+  display: block;
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+/* ========== 共享解锁样式 ========== */
+.share-blur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx;
+  background: rgba(255,255,255,0.9);
+  border-radius: 24rpx;
+  margin-top: 32rpx;
+}
+
+.blur-text {
+  font-size: 36rpx;
+  margin-bottom: 16rpx;
+}
+
+.blur-hint {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 32rpx;
+}
+
+.share-btn {
+  background: #C41E3A;
+  color: white;
+  font-size: 28rpx;
+  padding: 20rpx 48rpx;
+  border-radius: 16rpx;
+  border: none;
+}
+
+/* ========== 共享按钮样式 ========== */
+.cast-btn,
+.query-btn {
+  background: #C41E3A;
+  color: white;
+  font-size: 40rpx;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  border: 2rpx solid #D4A574;
+}
+
+/* ========== 共享免责声明弹窗 ========== */
+.disclaimer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.disclaimer-content {
+  background: white;
+  width: 80%;
+  max-width: 600rpx;
+  padding: 40rpx;
+  border-radius: 24rpx;
+}
+
+.disclaimer-header {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.disclaimer-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.disclaimer-body {
+  margin-bottom: 40rpx;
+}
+
+.disclaimer-text {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+}
+
+.disclaimer-footer {
+  text-align: center;
+}
+
+.disclaimer-close-btn {
+  background: #C41E3A;
+  color: white;
+  font-size: 32rpx;
+  padding: 20rpx 60rpx;
+  border-radius: 16rpx;
+  border: none;
+}
