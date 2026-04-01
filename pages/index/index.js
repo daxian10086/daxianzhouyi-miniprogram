@@ -1,13 +1,11 @@
 // miniprogram/pages/index/index.js
-const hexagramsData1 = require('../../data/hexagrams.js');
-const hexagramsData2 = require('../../data/hexagrams31-64.js');
-const hexagramsData = [...hexagramsData1, ...hexagramsData2];
+const hexagramsData = require('../../data/hexagrams.js');
 const hexagramFortunes = require('../../data/hexagramFortunes.js');
 const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
 
 Page({
   data: {
-    version: 'v2.3.63',
+    version: 'v2.4.40',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
@@ -18,6 +16,7 @@ Page({
     showShakeHint: false,
     isListening: false,
     isShaking: false, // 是否正在摇动
+    isShakingOrListening: false, // 是否正在摇动或监听（禁用手动查询按钮）
     shakeStatusText: '摇动手机开始算卦', // 摇动状态提示文字
     showShakeModal: false, // 是否显示摇动提示弹窗
     hasShared: false // 是否已解锁
@@ -42,10 +41,20 @@ Page({
     if (typeof index === 'string') {
       index = parseInt(index, 10);
     }
-    if (isNaN(index) || index < 0 || index > 3) {
+    if (isNaN(index) || index < 0 || index > 2) {
       return;
     }
     this.setData({ currentTab: index });
+  },
+
+  // 跳转到查询页面
+  navigateToQuery() {
+    if (this.data.isShakingOrListening) {
+      return; // 摇动或监听时禁用
+    }
+    wx.navigateTo({
+      url: '/pages/query/query'
+    });
   },
 
   // 开始持续震动
@@ -185,7 +194,10 @@ Page({
       success: () => {
         console.log('✅ 加速度监听已启动');
         wx.onAccelerometerChange(this._boundHandleAccelerometerChange);
-        this.setData({ isListening: true });
+        this.setData({
+          isListening: true,
+          isShakingOrListening: true // 禁用手动查询按钮
+        });
       },
       fail: (err) => {
         console.error('❌ 启动加速度监听失败:', err);
@@ -203,17 +215,23 @@ Page({
     wx.stopAccelerometer({
       success: () => {
         console.log('加速度监听已停止');
-        this.setData({ isListening: false });
+        this.setData({
+          isListening: false,
+          isShakingOrListening: false // 恢复手动查询按钮
+        });
       },
       fail: () => {
-        this.setData({ isListening: false });
+        this.setData({
+          isListening: false,
+          isShakingOrListening: false // 恢复手动查询按钮
+        });
       }
     });
   },
 
   // 生成运势分析
   generateFortuneAnalysis(hexagramNumber, lineIndex) {
-    const hexFortuneData = hexagramFortunes[hexagramNumber];
+    const hexFortuneData = hexagramFortunes[String(hexagramNumber)] || hexagramFortunes[hexagramNumber];
     const lineFortune = hexFortuneData ? hexFortuneData.lines[lineIndex] : null;
 
     if (lineFortune) {
@@ -279,7 +297,7 @@ Page({
       }
 
       const fortuneAnalysis = this.generateFortuneAnalysis(hexagram.number, lineIndex);
-      const mainFortune = hexagramMainFortunes[hexagram.number] || {
+      const mainFortune = hexagramMainFortunes[String(hexagram.number)] || hexagramMainFortunes[hexagram.number] || {
         yunshi: '暂无数据',
         caiyun: '暂无数据',
         jiating: '暂无数据',
