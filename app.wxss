@@ -252,3 +252,24 @@ page text {
   color: #999;
   display: block;
 }
+
+
+/* ========== 强制统一页面背景 ========== */
+page,
+.container {
+  background: #F5F5F5 !important;
+}
+
+
+/* ========== 强制统一样式 - 两个页面背景必须一致 ========== */
+page,
+.container {
+  background: #F5F5F5 !important;
+}
+
+/* 两个页面的cast-btn必须一致 */
+.cast-btn,
+.query-btn {
+  background: #C41E3A !important;
+  color: white !important;
+}
