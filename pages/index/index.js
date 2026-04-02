@@ -359,13 +359,10 @@ Page({
 
   // 页面加载
   onLoad() {
-    // 从app.js读取版本号
-    const app = getApp()
-    if (app && app.globalData && app.globalData.version) {
-      this.setData({
-        version: app.globalData.version
-      })
-    }
+    // 直接使用固定版本号
+    this.setData({
+      version: 'v2.4.141'
+    })
 
     // 检查小程序更新
     this.checkUpdate();
