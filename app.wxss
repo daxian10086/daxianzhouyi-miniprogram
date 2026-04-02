@@ -1,10 +1,10 @@
 /**app.wxss**/
 
-/* ========== 适度装饰风格 ========== */
+/* ========== 简约有质感风格 ========== */
 
 page {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #FFFFFF;
+  background-color: #F8F8F8;
   font-size: 28rpx;
   color: #1a1a1a;
 }
@@ -13,7 +13,7 @@ page view, page button, page text { box-sizing: border-box; }
 
 /* ---------- 页面基础 ---------- */
 .container {
-  background: #FFFFFF;
+  background: #F8F8F8;
   padding: 24rpx;
   min-height: 100vh;
 }
@@ -21,11 +21,11 @@ page view, page button, page text { box-sizing: border-box; }
 /* ---------- 标题区域 ---------- */
 .header {
   text-align: center;
-  padding: 24rpx 0 20rpx;
+  padding: 20rpx 0 16rpx;
 }
 
 .title {
-  font-size: 44rpx;
+  font-size: 40rpx;
   font-weight: 800;
   color: #C41E3A;
   display: block;
@@ -33,14 +33,14 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .subtitle {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #999999;
   display: block;
-  margin-top: 8rpx;
+  margin-top: 6rpx;
 }
 
 .version {
-  font-size: 20rpx;
+  font-size: 18rpx;
   color: #DDDDDD;
   display: block;
   margin-top: 4rpx;
@@ -51,22 +51,24 @@ page view, page button, page text { box-sizing: border-box; }
 .query-btn {
   display: block;
   width: 100%;
-  margin: 16rpx 0;
-  padding: 28rpx;
-  background: #C41E3A;
+  margin: 14rpx 0;
+  padding: 26rpx;
+  background: linear-gradient(135deg, #C41E3A 0%, #A01830 100%);
   color: #FFFFFF;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 600;
   border-radius: 16rpx;
   border: none;
   text-align: center;
   letter-spacing: 2rpx;
+  box-shadow: 0 4rpx 16rpx rgba(196, 30, 58, 0.25);
 }
 .cast-btn::after,
 .query-btn::after { border: none; }
 
 .query-btn {
-  background: #333333;
+  background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- 卦象信息 ---------- */
@@ -87,8 +89,8 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .disclaimer-text {
-  font-size: 22rpx;
-  color: #CCCCCC;
+  font-size: 20rpx;
+  color: #BBBBBB;
 }
 
 .disclaimer-modal {
@@ -108,51 +110,54 @@ page view, page button, page text { box-sizing: border-box; }
   background: #FFFFFF;
   width: 85%;
   border-radius: 24rpx;
-  padding: 40rpx;
+  padding: 36rpx;
 }
 
 .disclaimer-title {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 700;
   color: #1a1a1a;
   text-align: center;
   display: block;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
 }
 
 .disclaimer-text {
-  font-size: 26rpx;
+  font-size: 24rpx;
   color: #666666;
-  line-height: 1.8;
+  line-height: 1.7;
   display: block;
-  margin-bottom: 16rpx;
+  margin-bottom: 14rpx;
 }
 
 .disclaimer-close-btn {
   display: block;
   width: 100%;
-  padding: 24rpx;
-  background: #C41E3A;
+  padding: 22rpx;
+  background: linear-gradient(135deg, #C41E3A 0%, #A01830 100%);
   color: #FFFFFF;
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  border-radius: 12rpx;
+  border-radius: 14rpx;
   border: none;
-  margin-top: 32rpx;
+  margin-top: 28rpx;
+  box-shadow: 0 4rpx 12rpx rgba(196, 30, 58, 0.25);
 }
 .disclaimer-close-btn::after { border: none; }
 
 /* ---------- 查询区域 ---------- */
 .query-section {
-  background: #FAFAFA;
-  border-radius: 16rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
   padding: 24rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 16rpx;
+  border: 1rpx solid #F0F0F0;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.03);
 }
 
 .input-row {
   display: flex;
-  gap: 16rpx;
+  gap: 14rpx;
 }
 
 .input-group {
@@ -168,11 +173,11 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .picker {
-  background: #FFFFFF;
-  border: 1rpx solid #E5E5E5;
+  background: #F8F8F8;
+  border: 1rpx solid #E8E8E8;
   border-radius: 12rpx;
-  padding: 20rpx;
-  font-size: 26rpx;
+  padding: 18rpx;
+  font-size: 24rpx;
   color: #1a1a1a;
 }
 
@@ -181,17 +186,22 @@ page view, page button, page text { box-sizing: border-box; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60rpx 0;
+  padding: 48rpx 0;
 }
 
 .shake-hint-card {
   text-align: center;
+  background: #FFFFFF;
+  padding: 40rpx 48rpx;
+  border-radius: 24rpx;
+  border: 1rpx solid #F0F0F0;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
 }
 
 .shake-icon-wrapper {
-  width: 140rpx;
-  height: 140rpx;
-  background: #FFF5F5;
+  width: 120rpx;
+  height: 120rpx;
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -200,19 +210,19 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shake-icon {
-  font-size: 64rpx;
+  font-size: 56rpx;
 }
 
 .shake-hint-title {
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
   color: #1a1a1a;
   display: block;
-  margin-bottom: 8rpx;
+  margin-bottom: 6rpx;
 }
 
 .shake-hint-desc {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #999999;
   display: block;
 }
@@ -221,18 +231,18 @@ page view, page button, page text { box-sizing: border-box; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40rpx 0;
+  padding: 32rpx 0;
 }
 
 .shaking-img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 140rpx;
+  height: 140rpx;
 }
 
 .shaking-text {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #666666;
-  margin-top: 20rpx;
+  margin-top: 16rpx;
 }
 
 .shaking-text.active {
