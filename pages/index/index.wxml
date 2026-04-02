@@ -1,8 +1,6 @@
 <view class="container">
   <!-- 标题 -->
   <view class="header">
-    
-    <text class="subtitle">默念所想，心诚则灵</text>
     <text class="version">{{version}}</text>
   </view>
 
@@ -27,6 +25,10 @@
 
   <!-- 按钮 -->
   <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">算一卦</button>
+
+  <!-- 副标题 -->
+  <view class="mid-subtitle"><text class="subtitle">默念所想，心诚则灵</text></view>
+
   <button class="query-btn" bindtap="navigateToQuery" disabled="{{isShakingOrListening}}">手动查询</button>
 
   <!-- 免责声明 -->

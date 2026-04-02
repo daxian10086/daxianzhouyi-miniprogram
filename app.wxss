@@ -69,6 +69,18 @@ page view, page button, page text { box-sizing: border-box; }
   background: #444444;
 }
 
+/* ---------- 副标题在按钮之间 ---------- */
+.mid-subtitle {
+  text-align: center;
+  padding: 24rpx 0;
+}
+
+.mid-subtitle .subtitle {
+  font-size: 30rpx;
+  color: #999999;
+  letter-spacing: 2rpx;
+}
+
 /* ---------- 卦象信息 ---------- */
 .hexagram-info { }
 .hexagram-left { }
