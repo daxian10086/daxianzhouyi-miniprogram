@@ -6,8 +6,8 @@
 /* ---------- 卦象信息 ---------- */
 .hexagram-info {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 80rpx;
   padding: 28rpx 32rpx;
   margin-bottom: 16rpx;
   background: #FAFAFA;
@@ -15,7 +15,9 @@
   border: 1rpx solid #EEEEEE;
 }
 
-.hexagram-left { text-align: center; width: 100%; }
+.hexagram-left { text-align: center; }
+
+.hexagram-right { text-align: center; }
 
 .number { 
   font-size: 22rpx; 
@@ -42,10 +44,7 @@
 .hexagram-right { 
   display: flex; 
   flex-direction: column; 
-  align-items: center;
   gap: 10rpx;
-  width: 100%;
-  margin-top: 16rpx;
 }
 
 .trigram-label { 
