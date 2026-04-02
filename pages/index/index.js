@@ -5,7 +5,7 @@ const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
 
 Page({
   data: {
-    version: 'v2.4.146',
+    version: 'v2.4.147',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
