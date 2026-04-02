@@ -2,7 +2,7 @@
   <!-- 标题 -->
   <view class="header">
     <text class="title">大仙周易</text>
-    <text class="subtitle">默念所想之事，心诚则灵</text>
+    <text class="subtitle">默念所想，心诚则灵</text>
     <text class="version">{{version}}</text>
   </view>
 
