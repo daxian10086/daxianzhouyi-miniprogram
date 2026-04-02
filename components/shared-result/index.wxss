@@ -3,7 +3,7 @@
 /* ---------- 结果区域 ---------- */
 .shared-result { width: 100%; }
 
-/* ---------- 卦象信息 - 左右布局 ---------- */
+/* ---------- 卦象信息 ---------- */
 .hexagram-info {
   display: flex;
   justify-content: space-between;
@@ -13,16 +13,17 @@
 
 .hexagram-left { flex: 1; }
 
+.name-row { display: flex; align-items: baseline; gap: 12rpx; flex-wrap: wrap; }
 .number { font-size: 22rpx; color: #999999; }
-.name { font-size: 40rpx; font-weight: 800; color: #C41E3A; display: block; }
-.line-name { font-size: 24rpx; color: #666666; margin-top: 4rpx; display: block; }
+.name { font-size: 40rpx; font-weight: 800; color: #C41E3A; }
+.line-name { font-size: 24rpx; color: #666666; }
 
 .hexagram-right { flex: 1; }
 
-.trigram-row { display: flex; gap: 24rpx; }
-.trigram-item { flex: 1; }
+.trigram-item { margin-bottom: 12rpx; }
+.trigram-item:last-child { margin-bottom: 0; }
 .trigram-label { font-size: 20rpx; color: #BBBBBB; display: block; }
-.trigram-value { font-size: 26rpx; color: #333333; margin-top: 4rpx; display: block; }
+.trigram-value { font-size: 26rpx; color: #333333; display: block; }
 
 /* ---------- 选项卡 - 无边框 ---------- */
 .tabs {

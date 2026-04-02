@@ -1,24 +1,22 @@
 <!-- 共享卦象结果组件 -->
 <view class="shared-result">
-  <!-- 卦象信息 - 左右布局 -->
+  <!-- 卦象信息 -->
   <view class="hexagram-info">
     <view class="hexagram-left">
-      <text class="number">第{{hexagram.number}}卦</text>
-      <view class="name-line">
+      <view class="name-row">
+        <text class="number">第{{hexagram.number}}卦</text>
         <text class="name">{{hexagram.name}}</text>
+        <text class="line-name">{{hexagram.selectedLineName}}</text>
       </view>
-      <text class="line-name">{{hexagram.selectedLineName}}</text>
     </view>
     <view class="hexagram-right">
-      <view class="trigram-row">
-        <view class="trigram-item">
-          <text class="trigram-label">上卦</text>
-          <text class="trigram-value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}</text>
-        </view>
-        <view class="trigram-item">
-          <text class="trigram-label">下卦</text>
-          <text class="trigram-value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}</text>
-        </view>
+      <view class="trigram-item">
+        <text class="trigram-label">上卦</text>
+        <text class="trigram-value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}</text>
+      </view>
+      <view class="trigram-item">
+        <text class="trigram-label">下卦</text>
+        <text class="trigram-value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}</text>
       </view>
     </view>
   </view>
