@@ -1,122 +1,77 @@
-/* components/shared-result/index.wxss - 明亮简洁扁平化风格 */
+/* components/shared-result/index.wxss - 极简白色风格 */
 
 /* ---------- 选项卡 ---------- */
 .tabs {
   display: flex;
-  margin-top: 32rpx;
-  border-radius: 16rpx;
+  margin-top: 24rpx;
+  background: #FAFAFA;
+  border-radius: 8rpx;
   overflow: hidden;
-  background: #FFFFFF;
-  border: 2rpx solid #E8E8E8;
-  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
 }
 
 .tab {
   flex: 1;
-  padding: 24rpx;
+  padding: 20rpx;
   text-align: center;
-  font-size: 28rpx;
+  font-size: 26rpx;
+  color: #666;
   background: transparent;
-  color: #666666;
-  transition: all 0.2s ease;
 }
 
 .tab.active {
   background: #C41E3A;
-  color: #FFFFFF;
+  color: #FFF;
   font-weight: 600;
 }
 
-.tab-content {
-  margin-top: 24rpx;
-}
+.tab-content { margin-top: 20rpx; }
 
-/* ---------- 卦象详情 ---------- */
-.hexagram-detail {
-  padding: 0;
-}
+/* ---------- 详情 ---------- */
+.hexagram-detail { padding: 0; }
 
 .detail-item {
-  margin-bottom: 16rpx;
-  padding: 20rpx;
-  background: #FFFFFF;
-  border-radius: 12rpx;
-  border: 1rpx solid #EEEEEE;
+  padding: 16rpx;
+  margin-bottom: 12rpx;
+  background: #FAFAFA;
+  border-radius: 6rpx;
 }
 
 .detail-label {
-  display: inline-block;
-  font-size: 24rpx;
-  color: #999999;
-  margin-right: 12rpx;
+  font-size: 22rpx;
+  color: #999;
+  margin-right: 8rpx;
 }
 
 .detail-value {
-  display: inline;
-  font-size: 28rpx;
-  color: #333333;
-  line-height: 1.6;
-}
-
-.line {
-  font-size: 30rpx;
-  font-weight: 600;
-  margin-bottom: 12rpx;
-  color: #333333;
-}
-
-/* ---------- 详解两列布局 ---------- */
-.detail-columns {
-  display: flex;
-  flex-direction: row;
-  gap: 16rpx;
-}
-
-.detail-column {
-  flex: 1;
-  padding: 0;
-}
-
-.column-title {
-  display: block;
   font-size: 26rpx;
-  color: #C41E3A;
-  font-weight: 600;
-  margin-bottom: 12rpx;
+  color: #333;
+  line-height: 1.5;
+}
+
+.line { font-size: 28rpx; font-weight: 600; color: #333; margin-bottom: 8rpx; display: block; }
+
+/* ---------- 两列 ---------- */
+.detail-columns { display: flex; gap: 12rpx; }
+.detail-column { flex: 1; }
+.column-title { font-size: 24rpx; color: #C41E3A; font-weight: 600; margin-bottom: 10rpx; display: block; text-align: center; }
+
+/* ---------- 解锁 ---------- */
+.share-blur {
+  padding: 40rpx;
+  background: #FAFAFA;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
   text-align: center;
 }
 
-/* ---------- 解锁区域 ---------- */
-.share-blur {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 48rpx;
-  background: #FFFFFF;
-  border-radius: 16rpx;
-  margin-top: 24rpx;
-  border: 1rpx solid #EEEEEE;
-}
-
-.blur-text {
-  font-size: 32rpx;
-  margin-bottom: 12rpx;
-  color: #333333;
-}
-
-.blur-hint {
-  font-size: 24rpx;
-  color: #999999;
-  margin-bottom: 24rpx;
-}
+.blur-text { font-size: 28rpx; color: #333; margin-bottom: 8rpx; display: block; }
+.blur-hint { font-size: 22rpx; color: #999; margin-bottom: 20rpx; display: block; }
 
 .share-btn {
   background: #C41E3A;
-  color: #FFFFFF;
-  font-size: 28rpx;
-  padding: 20rpx 48rpx;
-  border-radius: 12rpx;
+  color: #FFF;
+  font-size: 26rpx;
+  padding: 16rpx 40rpx;
+  border-radius: 6rpx;
   border: none;
-  font-weight: 500;
 }

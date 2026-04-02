@@ -1,154 +1,92 @@
 /**app.wxss**/
 
-/* ========== 全局明亮简洁扁平化风格 ========== */
+/* ========== 极简白色风格 ========== */
 
 page {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  font-weight: 400;
-  color: #333333;
-  background-color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FFFFFF;
 }
 
-page view {
-  box-sizing: border-box;
-}
-
-page button {
-  box-sizing: border-box;
-}
-
-page text {
+page view, page button, page text {
   box-sizing: border-box;
 }
 
 /* ---------- 页面基础 ---------- */
 .container {
-  background: #F8F8F8;
+  background: #FFFFFF;
   padding: 24rpx;
   min-height: 100vh;
 }
 
-/* ---------- 标题区域 ---------- */
+/* ---------- 标题 ---------- */
 .header {
   text-align: center;
-  padding: 32rpx 16rpx;
+  padding: 24rpx 0;
 }
 
 .title {
-  font-size: 44rpx;
+  font-size: 40rpx;
   font-weight: 700;
   color: #C41E3A;
   display: block;
-  margin-bottom: 12rpx;
-  letter-spacing: 2rpx;
-}
-
-.subtitle {
-  font-size: 26rpx;
-  color: #999999;
-  display: block;
-  margin-bottom: 12rpx;
-}
-
-.version {
-  font-size: 22rpx;
-  color: #CCCCCC;
-  display: block;
-}
-
-/* ---------- 按钮统一样式 ---------- */
-.cast-btn,
-.query-btn {
-  margin: 24rpx 0;
-  padding: 28rpx;
-  background: #C41E3A;
-  color: #FFFFFF;
-  font-size: 32rpx;
-  border-radius: 12rpx;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 4rpx;
-  border: none;
-  box-shadow: 0 4rpx 12rpx rgba(196, 30, 58, 0.2);
-}
-
-.cast-btn::after,
-.query-btn::after {
-  border: none;
-}
-
-/* ---------- 卦象信息区域 ---------- */
-.hexagram-info {
-  display: flex;
-  margin-bottom: 24rpx;
-  padding: 24rpx;
-  background: #FFFFFF;
-  border-radius: 16rpx;
-  border: 1rpx solid #EEEEEE;
-}
-
-.hexagram-left {
-  flex: 1;
-}
-
-.hexagram-right {
-  flex: 1;
-}
-
-.number {
-  font-size: 24rpx;
-  color: #999999;
-}
-
-.name-line {
-  margin-top: 8rpx;
-}
-
-.name {
-  font-size: 36rpx;
-  font-weight: 700;
-  color: #C41E3A;
-}
-
-.line {
-  font-size: 26rpx;
-  color: #666666;
-  margin-left: 12rpx;
-}
-
-.trigram-item {
   margin-bottom: 8rpx;
 }
 
-.trigram-item .label {
-  font-size: 22rpx;
-  color: #999999;
+.subtitle {
+  font-size: 24rpx;
+  color: #999;
   display: block;
 }
 
-.trigram-item .value {
-  font-size: 24rpx;
-  color: #333333;
+.version {
+  font-size: 20rpx;
+  color: #CCC;
+  display: block;
+  margin-top: 4rpx;
 }
+
+/* ---------- 按钮 ---------- */
+.cast-btn, .query-btn {
+  margin: 20rpx 0;
+  padding: 24rpx;
+  background: #C41E3A;
+  color: #FFF;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  border: none;
+}
+.cast-btn::after, .query-btn::after { border: none; }
+
+/* ---------- 卦象信息 ---------- */
+.hexagram-info {
+  display: flex;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  background: #FAFAFA;
+  border-radius: 8rpx;
+}
+
+.hexagram-left { flex: 1; }
+.hexagram-right { flex: 1; }
+
+.number { font-size: 22rpx; color: #999; }
+.name { font-size: 32rpx; font-weight: 700; color: #C41E3A; }
+.line { font-size: 24rpx; color: #666; margin-left: 8rpx; }
+
+.trigram-item .label { font-size: 20rpx; color: #999; display: block; }
+.trigram-item .value { font-size: 22rpx; color: #333; }
 
 /* ---------- 免责声明 ---------- */
-.disclaimer-btn {
-  text-align: center;
-  padding: 24rpx;
-}
-
-.disclaimer-text {
-  font-size: 22rpx;
-  color: #BBBBBB;
-}
+.disclaimer-btn { text-align: center; padding: 20rpx; }
+.disclaimer-text { font-size: 20rpx; color: #BBB; }
 
 .disclaimer-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,82 +94,42 @@ page text {
 }
 
 .disclaimer-content {
-  background: #FFFFFF;
-  width: 85%;
-  max-width: 600rpx;
-  padding: 40rpx;
-  border-radius: 20rpx;
+  background: #FFF;
+  width: 80%;
+  padding: 32rpx;
+  border-radius: 12rpx;
 }
 
-.disclaimer-header {
-  text-align: center;
-  margin-bottom: 24rpx;
-}
-
-.disclaimer-title {
-  font-size: 34rpx;
-  font-weight: 700;
-  color: #333333;
-}
-
-.disclaimer-body {
-  margin-bottom: 32rpx;
-}
-
-.disclaimer-text {
-  display: block;
-  font-size: 26rpx;
-  color: #666666;
-  line-height: 1.6;
-  margin-bottom: 16rpx;
-}
-
-.disclaimer-footer {
-  text-align: center;
-}
+.disclaimer-title { font-size: 32rpx; font-weight: 700; color: #333; text-align: center; display: block; margin-bottom: 20rpx; }
+.disclaimer-text { font-size: 24rpx; color: #666; line-height: 1.6; display: block; margin-bottom: 16rpx; }
 
 .disclaimer-close-btn {
   background: #C41E3A;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 28rpx;
-  padding: 20rpx 60rpx;
-  border-radius: 12rpx;
+  padding: 16rpx 48rpx;
+  border-radius: 8rpx;
   border: none;
-  font-weight: 500;
-}
-
-/* ---------- 查询页面专用 ---------- */
-.query-section {
-  margin: 0 0 24rpx 0;
-  padding: 24rpx;
-  background: #FFFFFF;
-  border-radius: 16rpx;
-  border: 1rpx solid #EEEEEE;
-}
-
-.input-row {
-  display: flex;
-  margin-bottom: 20rpx;
-}
-
-.input-group {
-  flex: 1;
-  margin-right: 16rpx;
-}
-
-.input-group .label {
-  font-size: 24rpx;
-  color: #666666;
-  font-weight: 500;
-  margin-bottom: 8rpx;
   display: block;
+  margin: 0 auto;
 }
+
+/* ---------- 查询页面 ---------- */
+.query-section {
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  background: #FAFAFA;
+  border-radius: 8rpx;
+}
+
+.input-row { display: flex; margin-bottom: 16rpx; }
+.input-group { flex: 1; margin-right: 12rpx; }
+.input-group .label { font-size: 22rpx; color: #666; font-weight: 500; margin-bottom: 6rpx; display: block; }
 
 .picker {
-  border: 1rpx solid #DDDDDD;
-  padding: 16rpx;
-  border-radius: 10rpx;
-  background: #FAFAFA;
-  font-size: 26rpx;
-  color: #333333;
+  border: 1rpx solid #DDD;
+  padding: 14rpx;
+  border-radius: 6rpx;
+  background: #FFF;
+  font-size: 24rpx;
 }
