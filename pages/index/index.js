@@ -2,11 +2,10 @@
 const hexagramsData = require('../../data/hexagrams.js');
 const hexagramFortunes = require('../../data/hexagramFortunes.js');
 const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
-const appConfig = require('../../app.json');
 
 Page({
   data: {
-    version: appConfig.version || 'v2.4.40',
+    version: 'v2.4.139',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
