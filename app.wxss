@@ -253,3 +253,25 @@ page view, page button, page text { box-sizing: border-box; }
 .result::after {
   display: none !important;
 }
+/* ---------- 摇动动画 ---------- */
+.shaking-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.shaking-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
