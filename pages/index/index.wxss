@@ -7,14 +7,7 @@
 .container
 
 /* ========== 标题区域 ========== */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 48rpx;
-  position: relative;
-  z-index: 1;
-}
+
 
 /* 古典装饰线上 */
 .header::before {
@@ -25,29 +18,11 @@
   margin-bottom: 24rpx;
 }
 
-.title {
-  font-size: 72rpx;
-  font-weight: bold;
-  color: #8B4513;
-  /* 古典阴影效果 */
-  text-shadow: 2rpx 2rpx 4rpx rgba(139, 69, 19, 0.3);
-  /* 古典字体效果 */
-  letter-spacing: 8rpx;
-}
 
-.subtitle {
-  font-size: 28rpx;
-  color: #8B6914;
-  margin-top: 24rpx;
-  font-style: italic;
-  letter-spacing: 2rpx;
-}
 
-.version {
-  font-size: 20rpx;
-  color: #A0826D;
-  margin-top: 16rpx;
-}
+
+
+
 
 /* ========== 摇动提示区域 ========== */
 .shake-hint-container {
@@ -158,78 +133,26 @@
 }
 
 /* ========== 按钮区域 - 晋卦理念：上离下坤 ☲ ========== */
-.cast-btn {
-  margin: 64rpx 32rpx;
-  padding: 32rpx;
-  /* 离火红 - 朱砂正红，更优雅 */
-  background: #C41E3A;
-  color: white;
-  font-size: 40rpx;
-  border-radius: 16rpx;
-  /* 温润的阴影 */
-  
-  letter-spacing: 6rpx;
-  font-weight: bold;
-  border: none;
-  position: relative;
-  z-index: 1;
-}
+
 
 /* 丝绸般的高光 */
 
 
-.cast-btn[disabled] {
-  opacity: 0.5;
-  background: #888888;
-  
-}
 
-.cast-btn[disabled]::before {
-  display: none;
-}
 
-.query-btn {
-  margin: 32rpx;
-  padding: 32rpx;
-  /* 坤地稳重：经典藏青+棕 */
-  background: #C41E3A;
-  color: #D4A574;   /* 金沙色文字 */
-  font-size: 40rpx;
-  border-radius: 16rpx;
-  /* 稳重的阴影 */
-  
-  letter-spacing: 6rpx;
-  font-weight: bold;
-  border: 2rpx solid #D4A574;
-  position: relative;
-  z-index: 1;
-}
+
+
+
 
 /* 边框高光 */
 
 
-.query-btn[disabled] {
-  opacity: 0.5;
-  background: #888888;
-  
-  border-color: transparent;
-  color: white;
-}
+
 
 /* 免责声明按钮 */
-.disclaimer-btn {
-  margin: 32rpx;
-  padding: 20rpx;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
 
-.disclaimer-text {
-  font-size: 24rpx;
-  color: #A0826D;
-  letter-spacing: 2rpx;
-}
+
+
 
 /* ========== 结果区域 ========== */
 .result {
@@ -263,13 +186,7 @@
 }
 
 /* ========== 卦象信息区域 ========== */
-.hexagram-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20rpx;
-  position: relative;
-}
+
 
 /* 分割线 */
 .hexagram-info::after {
@@ -674,9 +591,7 @@
     min-height: 600rpx;
   }
   
-  .title {
-    font-size: 80rpx;
-  }
+  
 }
 
 /* ========== 动画优化 ========== */
@@ -690,11 +605,7 @@
 }
 
 /* ========== 按钮点击效果 ========== */
-.cast-btn:active,
-.query-btn:active {
-  transform: scale(0.98);
-  
-}
+
 
 /* ========== 解锁区域样式 ========== */
 .share-blur {

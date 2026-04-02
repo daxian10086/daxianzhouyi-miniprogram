@@ -1,29 +1,12 @@
 
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 48rpx;
-}
 
-.title {
-  font-size: 64rpx;
-  font-weight: bold;
-  color: #8B4513;
-}
 
-.subtitle {
-  font-size: 32rpx;
-  color: #666;
-  margin-top: 32rpx;
-}
 
-.version {
-  font-size: 20rpx;
-  color: #999;
-  margin-top: 16rpx;
-}
+
+
+
+
 
 .shaking-area {
   display: flex;
@@ -67,32 +50,16 @@
   50% { opacity: 0.3; }
 }
 
-.cast-btn {
-  margin: 64rpx 32rpx;
-  padding: 32rpx;
-  background: #8B4513;
-  color: white;
-  font-size: 40rpx;
-  border-radius: 16rpx;
-}
 
-.cast-btn[disabled] {
-  opacity: 0.6;
-}
+
+
 
 .query-nav {
   margin: 32rpx;
   display: block;
 }
 
-.query-btn {
-  padding: 24rpx;
-  background: #667eea;
-  color: white;
-  font-size: 32rpx;
-  border-radius: 12rpx;
-  border: none;
-}
+
 
 .result {
   margin-top: 48rpx;
@@ -103,12 +70,7 @@
   
 }
 
-.hexagram-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20rpx;
-}
+
 
 .hexagram-left {
   display: flex;
@@ -336,77 +298,26 @@
 }
 
 /* 免责声明按钮 */
-.disclaimer-btn {
-  text-align: center;
-  margin-top: 32rpx;
-  margin-bottom: 32rpx;
-}
 
-.disclaimer-text {
-  font-size: 24rpx;
-  color: #999;
-  text-decoration: underline;
-}
+
+
 
 /* 免责声明弹窗 */
-.disclaimer-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
 
-.disclaimer-content {
-  background: white;
-  border-radius: 24rpx;
-  padding: 48rpx;
-  margin: 32rpx;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
 
-.disclaimer-header {
-  margin-bottom: 32rpx;
-}
 
-.disclaimer-title {
-  font-size: 40rpx;
-  font-weight: bold;
-  color: #8B4513;
-  text-align: center;
-}
 
-.disclaimer-body {
-  flex: 1;
-  overflow-y: auto;
-}
 
-.disclaimer-body .disclaimer-text {
-  font-size: 28rpx;
-  color: #333;
-  line-height: 1.8;
-  display: block;
-  margin-bottom: 24rpx;
-}
 
-.disclaimer-footer {
-  margin-top: 32rpx;
-}
 
-.disclaimer-close-btn {
-  background: #8B4513;
-  color: white;
-  font-size: 32rpx;
-  padding: 24rpx;
-  border-radius: 12rpx;
-}
+
+
+
+.disclaimer-body 
+
+
+
+
 
 /* 摇动手机提示弹窗 */
 .shake-modal {
@@ -806,23 +717,11 @@
 }
 
 /* 查询输入区样式 */
-.query-section {
-  margin: 32rpx;
-  padding: 32rpx;
-  background: white;
-  border-radius: 16rpx;
-  
-}
 
-.input-row {
-  display: flex;
-  gap: 24rpx;
-}
 
-.input-group {
-  flex: 1;
-  margin-bottom: 24rpx;
-}
+
+
+
 
 .input-group .label {
   font-size: 28rpx;
@@ -840,11 +739,4 @@
 }
 
 /* Picker样式 */
-.picker {
-  border: 2rpx solid #ddd;
-  padding: 20rpx;
-  border-radius: 12rpx;
-  font-size: 32rpx;
-  background: #fafafa;
-  color: #333;
-}
+
