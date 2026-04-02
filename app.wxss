@@ -5,7 +5,7 @@
 page {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #FFFFFF;
-  font-size: 44rpx;
+  font-size: 42rpx;
   color: #1a1a1a;
 }
 
@@ -25,7 +25,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .title {
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: 800;
   color: #C41E3A;
   display: block;
@@ -33,7 +33,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .subtitle {
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: #999999;
   display: block;
   margin-top: 6rpx;
@@ -55,7 +55,7 @@ page view, page button, page text { box-sizing: border-box; }
   padding: 32rpx;
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 38rpx;
+  font-size: 36rpx;
   font-weight: 700;
   border-radius: 10rpx;
   border: none;
@@ -112,7 +112,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .disclaimer-title {
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: 700;
   color: #1a1a1a;
   text-align: center;
@@ -121,7 +121,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .disclaimer-text {
-  font-size: 44rpx;
+  font-size: 42rpx;
   color: #666666;
   line-height: 1.7;
   display: block;
@@ -134,7 +134,7 @@ page view, page button, page text { box-sizing: border-box; }
   padding: 22rpx;
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: 600;
   border-radius: 8rpx;
   border: none;
@@ -161,7 +161,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .input-group .label {
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: #666666;
   display: block;
   margin-bottom: 8rpx;
@@ -173,7 +173,7 @@ page view, page button, page text { box-sizing: border-box; }
   border: 1rpx solid #E0E0E0;
   border-radius: 8rpx;
   padding: 18rpx;
-  font-size: 44rpx;
+  font-size: 42rpx;
   color: #1a1a1a;
 }
 
@@ -205,7 +205,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shake-hint-title {
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: 600;
   color: #1a1a1a;
   display: block;
@@ -213,7 +213,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shake-hint-desc {
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: #999999;
   display: block;
 }
@@ -231,7 +231,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shaking-text {
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: #666666;
   margin-top: 16rpx;
 }
