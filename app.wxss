@@ -51,16 +51,16 @@ page view, page button, page text { box-sizing: border-box; }
 .query-btn {
   display: block;
   width: 100%;
-  margin: 14rpx 0;
-  padding: 26rpx;
+  margin: 16rpx 0;
+  padding: 32rpx;
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 30rpx;
-  font-weight: 600;
-  border-radius: 8rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  border-radius: 10rpx;
   border: none;
   text-align: center;
-  letter-spacing: 2rpx;
+  letter-spacing: 4rpx;
 }
 .cast-btn::after,
 .query-btn::after { border: none; }
