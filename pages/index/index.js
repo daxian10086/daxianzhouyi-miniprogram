@@ -1,12 +1,11 @@
 // miniprogram/pages/index/index.js
-const appConfig = require('../../../app.json');
 const hexagramsData = require('../../data/hexagrams.js');
 const hexagramFortunes = require('../../data/hexagramFortunes.js');
 const hexagramMainFortunes = require('../../data/hexagramMainFortunes.js');
 
 Page({
   data: {
-    version: appConfig.version || 'v2.4.150',
+    version: 'v2.4.152',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
