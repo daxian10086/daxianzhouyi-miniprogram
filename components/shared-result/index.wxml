@@ -1,27 +1,29 @@
-<!-- 共享卦象结果组件 - 包含完整结果展示 -->
+<!-- 共享卦象结果组件 -->
 <view class="shared-result">
-  <!-- 卦象信息 -->
+  <!-- 卦象信息 - 左右布局 -->
   <view class="hexagram-info">
     <view class="hexagram-left">
       <text class="number">第{{hexagram.number}}卦</text>
       <view class="name-line">
         <text class="name">{{hexagram.name}}</text>
-        <text class="line">{{hexagram.selectedLineName}}</text>
       </view>
+      <text class="line-name">{{hexagram.selectedLineName}}</text>
     </view>
     <view class="hexagram-right">
-      <view class="trigram-item">
-        <text class="label">上卦</text>
-        <text class="value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}（{{hexagram.upperTrigram.nature}}）</text>
-      </view>
-      <view class="trigram-item">
-        <text class="label">下卦</text>
-        <text class="value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}（{{hexagram.lowerTrigram.nature}}）</text>
+      <view class="trigram-row">
+        <view class="trigram-item">
+          <text class="trigram-label">上卦</text>
+          <text class="trigram-value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}</text>
+        </view>
+        <view class="trigram-item">
+          <text class="trigram-label">下卦</text>
+          <text class="trigram-value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}</text>
+        </view>
       </view>
     </view>
   </view>
 
-  <!-- 选项卡 -->
+  <!-- 选项卡 - 无边框 -->
   <view class="tabs">
     <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">主卦</view>
     <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">爻</view>

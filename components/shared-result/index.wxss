@@ -1,115 +1,92 @@
-/* components/shared-result/index.wxss - 简约UI */
+/* components/shared-result/index.wxss - 简约无边框设计 */
 
 /* ---------- 结果区域 ---------- */
 .shared-result { width: 100%; }
 
-/* ---------- 选项卡 ---------- */
+/* ---------- 卦象信息 - 左右布局 ---------- */
+.hexagram-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24rpx;
+}
+
+.hexagram-left { flex: 1; }
+
+.number { font-size: 22rpx; color: #999999; }
+.name { font-size: 40rpx; font-weight: 800; color: #C41E3A; display: block; }
+.line-name { font-size: 24rpx; color: #666666; margin-top: 4rpx; display: block; }
+
+.hexagram-right { flex: 1; }
+
+.trigram-row { display: flex; gap: 24rpx; }
+.trigram-item { flex: 1; }
+.trigram-label { font-size: 20rpx; color: #BBBBBB; display: block; }
+.trigram-value { font-size: 26rpx; color: #333333; margin-top: 4rpx; display: block; }
+
+/* ---------- 选项卡 - 无边框 ---------- */
 .tabs {
   display: flex;
-  background: #FAFAFA;
-  border-radius: 12rpx;
-  overflow: hidden;
+  margin: 24rpx 0;
 }
 
 .tab {
   flex: 1;
-  padding: 24rpx;
+  padding: 20rpx;
   text-align: center;
   font-size: 26rpx;
-  color: #666666;
+  color: #999999;
   background: transparent;
   font-weight: 500;
+  border-bottom: 4rpx solid #EEEEEE;
 }
 
 .tab.active {
-  background: #C41E3A;
-  color: #FFFFFF;
-  font-weight: 600;
+  color: #C41E3A;
+  font-weight: 700;
+  border-bottom-color: #C41E3A;
 }
 
-.tab-content {
-  margin-top: 24rpx;
-}
+.tab-content { margin-top: 20rpx; }
 
 /* ---------- 详情列表 ---------- */
 .hexagram-detail { padding: 0; }
 
 .detail-item {
   background: #FAFAFA;
-  border-radius: 12rpx;
-  padding: 20rpx;
-  margin-bottom: 12rpx;
+  border-radius: 8rpx;
+  padding: 16rpx;
+  margin-bottom: 10rpx;
 }
 
-.detail-label {
-  font-size: 22rpx;
-  color: #999999;
-  font-weight: 500;
-  margin-right: 8rpx;
-}
+.detail-label { font-size: 22rpx; color: #999999; margin-right: 8rpx; }
+.detail-value { font-size: 26rpx; color: #1a1a1a; line-height: 1.5; }
+.line-block { font-size: 28rpx; font-weight: 700; color: #1a1a1a; display: block; }
 
-.detail-value {
-  font-size: 26rpx;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-.line-block {
-  font-size: 28rpx;
-  font-weight: 700;
-  color: #1a1a1a;
-  display: block;
-  margin-bottom: 8rpx;
-}
-
-/* ---------- 两列布局 ---------- */
-.detail-columns {
-  display: flex;
-  gap: 16rpx;
-}
-
+/* ---------- 两列 ---------- */
+.detail-columns { display: flex; gap: 12rpx; }
 .detail-column { flex: 1; }
+.column-title { font-size: 24rpx; font-weight: 700; color: #C41E3A; display: block; text-align: center; margin-bottom: 12rpx; }
 
-.column-title {
-  font-size: 24rpx;
-  font-weight: 700;
-  color: #C41E3A;
-  display: block;
-  text-align: center;
-  margin-bottom: 16rpx;
-}
-
-/* ---------- 解锁区域 ---------- */
+/* ---------- 解锁 ---------- */
 .share-blur {
   background: #FAFAFA;
-  border-radius: 16rpx;
-  padding: 48rpx;
-  margin-top: 24rpx;
+  border-radius: 12rpx;
+  padding: 40rpx;
+  margin-top: 20rpx;
   text-align: center;
 }
 
-.blur-text {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #1a1a1a;
-  display: block;
-  margin-bottom: 8rpx;
-}
-
-.blur-hint {
-  font-size: 22rpx;
-  color: #999999;
-  display: block;
-  margin-bottom: 24rpx;
-}
+.blur-text { font-size: 28rpx; font-weight: 600; color: #1a1a1a; display: block; margin-bottom: 8rpx; }
+.blur-hint { font-size: 22rpx; color: #999999; display: block; margin-bottom: 20rpx; }
 
 .share-btn {
   background: #C41E3A;
   color: #FFFFFF;
   font-size: 26rpx;
   font-weight: 600;
-  padding: 20rpx 48rpx;
-  border-radius: 12rpx;
+  padding: 16rpx 40rpx;
+  border-radius: 8rpx;
   border: none;
 }
 .share-btn::after { border: none; }
