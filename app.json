@@ -1,5 +1,5 @@
 {
-  "version": "v2.4.133",
+  "version": "v2.4.134",
   "versionDate": "2026-04-01",
   "pages": [
     "pages/index/index",
@@ -8,9 +8,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F5F5DC",
+    "navigationBarBackgroundColor": "#C41E3A",
     "navigationBarTitleText": "大仙周易",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "permission": {
     "scope.userLocation": {
