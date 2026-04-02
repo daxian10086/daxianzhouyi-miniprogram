@@ -275,3 +275,10 @@ page view, page button, page text { box-sizing: border-box; }
   color: #C41E3A;
   font-weight: 600;
 }
+/* ---------- 结果外层容器 ---------- */
+.result {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
