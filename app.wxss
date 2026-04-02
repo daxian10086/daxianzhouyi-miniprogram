@@ -87,7 +87,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .disclaimer-text {
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #BBBBBB;
 }
 
