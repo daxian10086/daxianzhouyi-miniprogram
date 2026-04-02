@@ -187,10 +187,8 @@ page view, page button, page text { box-sizing: border-box; }
 
 .shake-hint-card {
   text-align: center;
-  background: #FAFAFA;
-  padding: 40rpx 48rpx;
-  border-radius: 12rpx;
-  border: 1rpx solid #EEEEEE;
+  background: transparent;
+  padding: 40rpx;
 }
 
 .shake-icon-wrapper {
