@@ -282,3 +282,9 @@ page view, page button, page text { box-sizing: border-box; }
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* ---------- 去除装饰元素 ---------- */
+.result::before,
+.result::after {
+  display: none !important;
+}
