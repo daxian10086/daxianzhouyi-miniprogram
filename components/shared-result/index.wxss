@@ -1,4 +1,4 @@
-/* components/shared-result/index.wxss - 简约无边框设计 */
+/* components/shared-result/index.wxss - 无边框设计 */
 
 /* ---------- 结果区域 ---------- */
 .shared-result { width: 100%; }
@@ -25,68 +25,64 @@
 .trigram-label { font-size: 20rpx; color: #BBBBBB; display: block; }
 .trigram-value { font-size: 26rpx; color: #333333; display: block; }
 
-/* ---------- 选项卡 - 无边框 ---------- */
+/* ---------- 选项卡 ---------- */
 .tabs {
   display: flex;
   margin: 24rpx 0;
+  border-bottom: 2rpx solid #EEEEEE;
 }
 
 .tab {
   flex: 1;
-  padding: 20rpx;
+  padding: 16rpx;
   text-align: center;
   font-size: 26rpx;
   color: #999999;
   background: transparent;
   font-weight: 500;
-  border-bottom: 4rpx solid #EEEEEE;
 }
 
 .tab.active {
   color: #C41E3A;
   font-weight: 700;
-  border-bottom-color: #C41E3A;
 }
 
-.tab-content { margin-top: 20rpx; }
+.tab-content { margin-top: 16rpx; }
 
 /* ---------- 详情列表 ---------- */
 .hexagram-detail { padding: 0; }
 
 .detail-item {
-  background: #FAFAFA;
-  border-radius: 8rpx;
-  padding: 16rpx;
-  margin-bottom: 10rpx;
+  padding: 12rpx 0;
+  margin-bottom: 8rpx;
+  border-bottom: 1rpx solid #F5F5F5;
 }
 
 .detail-label { font-size: 22rpx; color: #999999; margin-right: 8rpx; }
 .detail-value { font-size: 26rpx; color: #1a1a1a; line-height: 1.5; }
-.line-block { font-size: 28rpx; font-weight: 700; color: #1a1a1a; display: block; }
+.line-block { font-size: 28rpx; font-weight: 700; color: #1a1a1a; display: block; margin-bottom: 8rpx; }
 
 /* ---------- 两列 ---------- */
-.detail-columns { display: flex; gap: 12rpx; }
+.detail-columns { display: flex; gap: 24rpx; margin-top: 16rpx; }
 .detail-column { flex: 1; }
-.column-title { font-size: 24rpx; font-weight: 700; color: #C41E3A; display: block; text-align: center; margin-bottom: 12rpx; }
+.column-title { font-size: 24rpx; font-weight: 700; color: #C41E3A; display: block; margin-bottom: 12rpx; }
 
 /* ---------- 解锁 ---------- */
 .share-blur {
-  background: #FAFAFA;
-  border-radius: 12rpx;
-  padding: 40rpx;
-  margin-top: 20rpx;
+  padding: 32rpx;
+  margin-top: 16rpx;
   text-align: center;
 }
 
 .blur-text { font-size: 28rpx; font-weight: 600; color: #1a1a1a; display: block; margin-bottom: 8rpx; }
-.blur-hint { font-size: 22rpx; color: #999999; display: block; margin-bottom: 20rpx; }
+.blur-hint { font-size: 22rpx; color: #999999; display: block; margin-bottom: 16rpx; }
 
 .share-btn {
   background: #C41E3A;
   color: #FFFFFF;
   font-size: 26rpx;
   font-weight: 600;
-  padding: 16rpx 40rpx;
+  padding: 14rpx 36rpx;
   border-radius: 8rpx;
   border: none;
 }
