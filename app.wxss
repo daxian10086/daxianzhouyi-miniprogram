@@ -33,7 +33,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .subtitle {
-  font-size: 24rpx;
+  font-size: 30rpx;
   color: #999999;
   display: block;
   margin-top: 8rpx;
