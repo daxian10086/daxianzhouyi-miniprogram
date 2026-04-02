@@ -1,8 +1,4 @@
-.container {
-  padding: 20rpx;
-  min-height: 100vh;
-  background: #C41E3A;
-}
+
 
 .header {
   display: flex;
