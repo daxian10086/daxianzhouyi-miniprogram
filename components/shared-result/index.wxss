@@ -6,16 +6,17 @@
 /* ---------- 卦象信息 ---------- */
 .hexagram-info {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 24rpx;
+  justify-content: center;
+  align-items: center;
+  gap: 60rpx;
+  padding: 28rpx 32rpx;
   margin-bottom: 16rpx;
   background: #FAFAFA;
   border-radius: 10rpx;
   border: 1rpx solid #EEEEEE;
 }
 
-.hexagram-left { flex: 1; }
+.hexagram-left { }
 
 .number { 
   font-size: 22rpx; 
