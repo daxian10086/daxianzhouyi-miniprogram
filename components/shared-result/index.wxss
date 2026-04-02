@@ -7,7 +7,7 @@
 .hexagram-info {
   display: flex;
   justify-content: center;
-  gap: 80rpx;
+  gap: 120rpx;
   padding: 28rpx 32rpx;
   margin-bottom: 16rpx;
   background: #FAFAFA;
