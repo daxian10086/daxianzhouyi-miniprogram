@@ -3,8 +3,8 @@
   <!-- 卦象信息 -->
   <view class="hexagram-info">
     <view class="hexagram-left">
+      <text class="number">第{{hexagram.number}}卦</text>
       <view class="name-row">
-        <text class="number">第{{hexagram.number}}卦</text>
         <text class="name">{{hexagram.name}}</text>
         <text class="line-name">{{hexagram.selectedLineName}}</text>
       </view>
@@ -21,7 +21,7 @@
     </view>
   </view>
 
-  <!-- 选项卡 - 无边框 -->
+  <!-- 选项卡 -->
   <view class="tabs">
     <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">主卦</view>
     <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">爻</view>

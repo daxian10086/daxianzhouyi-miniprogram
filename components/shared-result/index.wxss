@@ -1,4 +1,4 @@
-/* components/shared-result/index.wxss - 无边框设计 */
+/* components/shared-result/index.wxss */
 
 /* ---------- 结果区域 ---------- */
 .shared-result { width: 100%; }
@@ -13,8 +13,8 @@
 
 .hexagram-left { flex: 1; }
 
-.name-row { display: flex; align-items: baseline; gap: 12rpx; flex-wrap: wrap; }
-.number { font-size: 22rpx; color: #999999; }
+.number { font-size: 22rpx; color: #999999; display: block; margin-bottom: 8rpx; }
+.name-row { display: flex; align-items: baseline; gap: 12rpx; }
 .name { font-size: 40rpx; font-weight: 800; color: #C41E3A; }
 .line-name { font-size: 24rpx; color: #666666; }
 
@@ -49,7 +49,7 @@
 
 .tab-content { margin-top: 16rpx; }
 
-/* ---------- 详情列表 ---------- */
+/* ---------- 详情 ---------- */
 .hexagram-detail { padding: 0; }
 
 .detail-item {
