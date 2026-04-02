@@ -1,12 +1,12 @@
 <view class="container">
-  <!-- 标题区域 -->
+  <!-- 标题 -->
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">手动查询</text>
     <text class="version">{{version}}</text>
   </view>
 
-  <!-- 查询输入区 -->
+  <!-- 查询输入 -->
   <view class="query-section">
     <view class="input-row">
       <view class="input-group">
@@ -25,36 +25,11 @@
     <button class="cast-btn" bindtap="onQuery">查询</button>
   </view>
 
-  <!-- 免责声明按钮 -->
-  <view class="disclaimer-btn" bindtap="showDisclaimer">
-    <text class="disclaimer-text">⚠️ 免责声明</text>
-  </view>
+  <!-- 免责声明 -->
+  <view class="disclaimer-btn" bindtap="showDisclaimer"><text class="disclaimer-text">⚠️ 免责声明</text></view>
 
-  <!-- 结果区域 - 使用共享组件 -->
+  <!-- 结果 - 完整使用共享组件 -->
   <view class="result" wx:if="{{hexagram}}">
-    <!-- 卦象信息 -->
-    <view class="hexagram-info">
-      <view class="hexagram-left">
-        <text class="number">第{{hexagram.number}}卦</text>
-        <view class="name-line">
-          <text class="name">{{hexagram.name}}</text>
-          <text class="line">{{hexagram.selectedLineName}}</text>
-        </view>
-      </view>
-
-      <view class="hexagram-right">
-        <view class="trigram-item">
-          <text class="label">上卦</text>
-          <text class="value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}（{{hexagram.upperTrigram.nature}}）</text>
-        </view>
-        <view class="trigram-item">
-          <text class="label">下卦</text>
-          <text class="value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}（{{hexagram.lowerTrigram.nature}}）</text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 共享结果组件 -->
     <shared-result 
       hexagram="{{hexagram}}"
       fortuneAnalysis="{{fortuneAnalysis}}"
@@ -70,22 +45,12 @@
 <!-- 免责声明弹窗 -->
 <view class="disclaimer-modal" wx:if="{{showDisclaimerModal}}">
   <view class="disclaimer-content">
-    <view class="disclaimer-header">
-      <text class="disclaimer-title">免责声明</text>
-    </view>
+    <view class="disclaimer-header"><text class="disclaimer-title">免责声明</text></view>
     <view class="disclaimer-body">
-      <text class="disclaimer-text">
-        本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。
-      </text>
-      <text class="disclaimer-text">
-        人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。
-      </text>
-      <text class="disclaimer-text">
-        本小程序不承担任何因使用本服务而产生的后果。
-      </text>
+      <text class="disclaimer-text">本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。</text>
+      <text class="disclaimer-text">人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。</text>
+      <text class="disclaimer-text">本小程序不承担任何因使用本服务而产生的后果。</text>
     </view>
-    <view class="disclaimer-footer">
-      <button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button>
-    </view>
+    <view class="disclaimer-footer"><button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button></view>
   </view>
 </view>

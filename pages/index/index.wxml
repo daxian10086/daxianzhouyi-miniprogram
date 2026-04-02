@@ -1,74 +1,39 @@
 <view class="container">
-  <!-- 标题区域 -->
+  <!-- 标题 -->
   <view class="header">
     <text class="title">大仙周易</text>
     <text class="subtitle">默念所想之事，心诚则灵</text>
     <text class="version">{{version}}</text>
   </view>
 
-  <!-- 步骤1: 摇动手机开始算卦提示 -->
+  <!-- 摇卦提示 -->
   <view class="shake-hint-container" wx:if="{{showShakeHint && !isShaking && !isAnimating}}">
     <view class="shake-hint-card">
-      <view class="shake-icon-wrapper">
-        <text class="shake-icon">📳</text>
-      </view>
+      <view class="shake-icon-wrapper"><text class="shake-icon">📳</text></view>
       <text class="shake-hint-title">摇动手机开始算卦</text>
       <text class="shake-hint-desc">像摇骰子一样上下左右摇晃手机</text>
     </view>
   </view>
 
-  <!-- 步骤2: 正在摇卦动画（用户摇动时显示） -->
+  <!-- 摇卦动画 -->
   <view class="shaking-area" wx:if="{{isShaking}}">
     <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
     <view class="shaking-text active">正在摇卦...</view>
   </view>
-
-  <!-- 步骤3: 算卦中动画（停止摇动后显示2秒） -->
   <view class="shaking-area" wx:if="{{isAnimating && !isShaking}}">
     <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
     <view class="shaking-text active">算卦中...</view>
   </view>
 
-  <!-- 摇卦按钮 -->
-  <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">
-    算一卦
-  </button>
+  <!-- 按钮 -->
+  <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">算一卦</button>
+  <button class="query-btn" bindtap="navigateToQuery" disabled="{{isShakingOrListening}}">手动查询</button>
 
-  <!-- 手动查询按钮 -->
-  <button class="query-btn" bindtap="navigateToQuery" disabled="{{isShakingOrListening}}">
-    手动查询
-  </button>
+  <!-- 免责声明 -->
+  <view class="disclaimer-btn" bindtap="showDisclaimer"><text class="disclaimer-text">⚠️ 免责声明</text></view>
 
-  <!-- 免责声明按钮 -->
-  <view class="disclaimer-btn" bindtap="showDisclaimer">
-    <text class="disclaimer-text">⚠️ 免责声明</text>
-  </view>
-
-  <!-- 结果区域 - 使用共享组件 -->
+  <!-- 结果 - 完整使用共享组件 -->
   <view class="result" wx:if="{{hexagram}}">
-    <!-- 卦象信息 -->
-    <view class="hexagram-info">
-      <view class="hexagram-left">
-        <text class="number">第{{hexagram.number}}卦</text>
-        <view class="name-line">
-          <text class="name">{{hexagram.name}}</text>
-          <text class="line">{{hexagram.selectedLineName}}</text>
-        </view>
-      </view>
-
-      <view class="hexagram-right">
-        <view class="trigram-item">
-          <text class="label">上卦</text>
-          <text class="value">{{hexagram.upperTrigram.symbol}} {{hexagram.upperTrigram.name}}（{{hexagram.upperTrigram.nature}}）</text>
-        </view>
-        <view class="trigram-item">
-          <text class="label">下卦</text>
-          <text class="value">{{hexagram.lowerTrigram.symbol}} {{hexagram.lowerTrigram.name}}（{{hexagram.lowerTrigram.nature}}）</text>
-        </view>
-      </view>
-    </view>
-
-    <!-- 共享结果组件 -->
     <shared-result 
       hexagram="{{hexagram}}"
       fortuneAnalysis="{{fortuneAnalysis}}"
@@ -84,22 +49,12 @@
 <!-- 免责声明弹窗 -->
 <view class="disclaimer-modal" wx:if="{{showDisclaimerModal}}">
   <view class="disclaimer-content">
-    <view class="disclaimer-header">
-      <text class="disclaimer-title">免责声明</text>
-    </view>
+    <view class="disclaimer-header"><text class="disclaimer-title">免责声明</text></view>
     <view class="disclaimer-body">
-      <text class="disclaimer-text">
-        本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。
-      </text>
-      <text class="disclaimer-text">
-        人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。
-      </text>
-      <text class="disclaimer-text">
-        本小程序不承担任何因使用本服务而产生的后果。
-      </text>
+      <text class="disclaimer-text">本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。</text>
+      <text class="disclaimer-text">人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。</text>
+      <text class="disclaimer-text">本小程序不承担任何因使用本服务而产生的后果。</text>
     </view>
-    <view class="disclaimer-footer">
-      <button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button>
-    </view>
+    <view class="disclaimer-footer"><button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button></view>
   </view>
 </view>
