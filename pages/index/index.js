@@ -359,10 +359,11 @@ Page({
 
   // 页面加载
   onLoad() {
-    // 直接使用固定版本号
-    this.setData({
-      version: 'v2.4.141'
-    })
+    // 从app.js获取版本号（会自动同步app.json）
+    const app = getApp()
+    if (app && app.globalData && app.globalData.version) {
+      this.setData({ version: app.globalData.version })
+    }
 
     // 检查小程序更新
     this.checkUpdate();
