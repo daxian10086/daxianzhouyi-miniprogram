@@ -1,12 +1,12 @@
 /**app.wxss**/
 
-/* ========== 扁平简约风格 ========== */
+/* ========== 简约有质感风格 ========== */
 
 page {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #FFFFFF;
-  font-size: 42rpx;
-  color: #1a1a1a;
+  background-color: #F5F5F5;
+  font-size: 28rpx;
+  color: #333333;
 }
 
 page view, page button, page text { box-sizing: border-box; }
@@ -21,11 +21,11 @@ page view, page button, page text { box-sizing: border-box; }
 /* ---------- 标题区域 ---------- */
 .header {
   text-align: center;
-  padding: 20rpx 0 16rpx;
+  padding: 24rpx 0;
 }
 
 .title {
-  font-size: 42rpx;
+  font-size: 44rpx;
   font-weight: 800;
   color: #C41E3A;
   display: block;
@@ -36,37 +36,37 @@ page view, page button, page text { box-sizing: border-box; }
   font-size: 24rpx;
   color: #999999;
   display: block;
-  margin-top: 6rpx;
+  margin-top: 8rpx;
 }
 
 .version {
-  font-size: 18rpx;
-  color: #DDDDDD;
+  font-size: 20rpx;
+  color: #CCCCCC;
   display: block;
   margin-top: 4rpx;
 }
 
-/* ---------- 按钮 - 扁平化 ---------- */
+/* ---------- 按钮 ---------- */
 .cast-btn,
 .query-btn {
   display: block;
   width: 100%;
   margin: 16rpx 0;
-  padding: 32rpx;
+  padding: 28rpx;
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 36rpx;
-  font-weight: 700;
-  border-radius: 10rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  border-radius: 12rpx;
   border: none;
   text-align: center;
-  letter-spacing: 4rpx;
+  letter-spacing: 2rpx;
 }
 .cast-btn::after,
 .query-btn::after { border: none; }
 
 .query-btn {
-  background: #333333;
+  background: #444444;
 }
 
 /* ---------- 卦象信息 ---------- */
@@ -87,8 +87,8 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .disclaimer-text {
-  font-size: 24rpx;
-  color: #BBBBBB;
+  font-size: 22rpx;
+  color: #AAAAAA;
 }
 
 .disclaimer-modal {
@@ -107,21 +107,21 @@ page view, page button, page text { box-sizing: border-box; }
 .disclaimer-content {
   background: #FFFFFF;
   width: 85%;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 36rpx;
 }
 
 .disclaimer-title {
-  font-size: 42rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #333333;
   text-align: center;
   display: block;
   margin-bottom: 20rpx;
 }
 
 .disclaimer-text {
-  font-size: 42rpx;
+  font-size: 26rpx;
   color: #666666;
   line-height: 1.7;
   display: block;
@@ -131,12 +131,12 @@ page view, page button, page text { box-sizing: border-box; }
 .disclaimer-close-btn {
   display: block;
   width: 100%;
-  padding: 22rpx;
+  padding: 24rpx;
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 42rpx;
+  font-size: 30rpx;
   font-weight: 600;
-  border-radius: 8rpx;
+  border-radius: 12rpx;
   border: none;
   margin-top: 28rpx;
 }
@@ -144,16 +144,15 @@ page view, page button, page text { box-sizing: border-box; }
 
 /* ---------- 查询区域 ---------- */
 .query-section {
-  background: #FAFAFA;
-  border-radius: 12rpx;
+  background: #F8F8F8;
+  border-radius: 16rpx;
   padding: 24rpx;
-  margin-bottom: 16rpx;
-  border: 1rpx solid #EEEEEE;
+  margin-bottom: 20rpx;
 }
 
 .input-row {
   display: flex;
-  gap: 14rpx;
+  gap: 16rpx;
 }
 
 .input-group {
@@ -164,17 +163,17 @@ page view, page button, page text { box-sizing: border-box; }
   font-size: 24rpx;
   color: #666666;
   display: block;
-  margin-bottom: 8rpx;
+  margin-bottom: 10rpx;
   font-weight: 500;
 }
 
 .picker {
   background: #FFFFFF;
   border: 1rpx solid #E0E0E0;
-  border-radius: 8rpx;
-  padding: 18rpx;
-  font-size: 42rpx;
-  color: #1a1a1a;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  color: #333333;
 }
 
 /* ---------- 摇一卦专属 ---------- */
@@ -182,34 +181,33 @@ page view, page button, page text { box-sizing: border-box; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 48rpx 0;
+  padding: 60rpx 0;
 }
 
 .shake-hint-card {
   text-align: center;
-  background: transparent;
-  padding: 40rpx;
+  padding: 48rpx;
 }
 
 .shake-icon-wrapper {
-  width: 120rpx;
-  height: 120rpx;
+  width: 140rpx;
+  height: 140rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 20rpx;
+  margin: 0 auto 24rpx;
 }
 
 .shake-icon {
-  font-size: 56rpx;
+  font-size: 72rpx;
 }
 
 .shake-hint-title {
-  font-size: 42rpx;
+  font-size: 32rpx;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   display: block;
-  margin-bottom: 6rpx;
+  margin-bottom: 8rpx;
 }
 
 .shake-hint-desc {
@@ -218,42 +216,6 @@ page view, page button, page text { box-sizing: border-box; }
   display: block;
 }
 
-.shaking-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 32rpx 0;
-}
-
-.shaking-img {
-  width: 140rpx;
-  height: 140rpx;
-}
-
-.shaking-text {
-  font-size: 24rpx;
-  color: #666666;
-  margin-top: 16rpx;
-}
-
-.shaking-text.active {
-  color: #C41E3A;
-  font-weight: 600;
-}
-
-/* ---------- 结果外层 ---------- */
-.result {
-  border: none !important;
-  background: transparent !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.result::before,
-.result::after {
-  display: none !important;
-}
-/* ---------- 摇动动画 ---------- */
 .shaking-area {
   display: flex;
   flex-direction: column;
@@ -274,4 +236,28 @@ page view, page button, page text { box-sizing: border-box; }
   0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(-15deg); }
   75% { transform: rotate(15deg); }
+}
+
+.shaking-text {
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 16rpx;
+}
+
+.shaking-text.active {
+  color: #C41E3A;
+  font-weight: 600;
+}
+
+/* ---------- 结果外层 ---------- */
+.result {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.result::before,
+.result::after {
+  display: none !important;
 }

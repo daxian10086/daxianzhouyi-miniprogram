@@ -1,4 +1,4 @@
-/* components/shared-result/index.wxss - 扁平简约风格 */
+/* components/shared-result/index.wxss - 简约有质感 */
 
 /* ---------- 结果区域 ---------- */
 .shared-result { width: 100%; }
@@ -7,79 +7,77 @@
 .hexagram-info {
   display: flex;
   justify-content: center;
-  gap: 120rpx;
-  padding: 28rpx 32rpx;
-  margin-bottom: 16rpx;
+  gap: 100rpx;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
   background: #FAFAFA;
-  border-radius: 10rpx;
-  border: 1rpx solid #EEEEEE;
+  border-radius: 16rpx;
+  border: 1rpx solid #F0F0F0;
 }
 
-.hexagram-left { text-align: center; }
-
-.hexagram-right { text-align: center; }
-
-.number { 
-  font-size: 36rpx; 
-  color: #999999; 
-  display: block; 
-  margin-bottom: 4rpx; 
+.hexagram-left {
+  text-align: center;
 }
 
-.name { 
-  font-size: 44rpx; 
-  font-weight: 800; 
-  color: #C41E3A; 
-  display: block; 
+.hexagram-right {
+  text-align: center;
+}
+
+.number {
+  font-size: 24rpx;
+  color: #999999;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.name {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #C41E3A;
+  display: block;
   letter-spacing: 2rpx;
 }
 
-.line-name { 
-  font-size: 34rpx; 
-  color: #666666; 
-  margin-top: 6rpx; 
-  display: block; 
+.line-name {
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 8rpx;
+  display: block;
 }
 
-.hexagram-right { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10rpx;
+.trigram-label {
+  font-size: 22rpx;
+  color: #BBBBBB;
+  display: block;
+  margin-bottom: 4rpx;
+  margin-top: 12rpx;
 }
 
-.trigram-label { 
-  font-size: 20rpx; 
-  color: #BBBBBB; 
-  display: block; 
-  margin-bottom: 2rpx;
-}
-
-.trigram-value { 
-  font-size: 36rpx; 
-  color: #333333; 
-  display: block; 
+.trigram-value {
+  font-size: 28rpx;
+  color: #444444;
+  display: block;
   font-weight: 500;
 }
 
 /* ---------- 选项卡 ---------- */
 .tabs {
   display: flex;
-  margin-bottom: 16rpx;
-  background: #FAFAFA;
-  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  background: #F8F8F8;
+  border-radius: 12rpx;
   padding: 6rpx;
-  border: 1rpx solid #EEEEEE;
 }
 
 .tab {
   flex: 1;
-  padding: 16rpx;
+  padding: 18rpx;
   text-align: center;
-  font-size: 36rpx;
+  font-size: 26rpx;
   color: #666666;
   background: transparent;
   font-weight: 500;
-  border-radius: 8rpx;
+  border-radius: 10rpx;
 }
 
 .tab.active {
@@ -91,100 +89,100 @@
 .tab-content { }
 
 /* ---------- 详情列表 ---------- */
-.hexagram-detail { 
-  padding: 0; 
+.hexagram-detail {
+  padding: 0;
 }
 
 .detail-item {
-  padding: 18rpx;
-  margin-bottom: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 12rpx;
   background: #FAFAFA;
-  border-radius: 10rpx;
-  border: 1rpx solid #EEEEEE;
+  border-radius: 12rpx;
+  border: 1rpx solid #F0F0F0;
 }
 
-.detail-label { 
-  font-size: 36rpx; 
-  color: #999999; 
-  margin-right: 10rpx; 
+.detail-item:last-child {
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 12rpx;
   font-weight: 500;
 }
 
-.detail-value { 
-  font-size: 36rpx; 
-  color: #1a1a1a; 
+.detail-value {
+  font-size: 26rpx;
+  color: #333333;
   line-height: 1.6;
   display: block;
   margin-top: 6rpx;
 }
 
-.line-block { 
-  font-size: 34rpx; 
-  font-weight: 700; 
-  color: #C41E3A; 
-  display: block; 
+.line-block {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #C41E3A;
+  display: block;
   margin-bottom: 10rpx;
-  padding-bottom: 10rpx;
-  border-bottom: 1rpx solid #FFEEEE;
 }
 
 /* ---------- 两列 ---------- */
-.detail-columns { 
-  display: flex; 
-  gap: 14rpx; 
-  margin-top: 14rpx; 
+.detail-columns {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
 }
 
-.detail-column { 
-  flex: 1; 
+.detail-column {
+  flex: 1;
   background: #FAFAFA;
-  border-radius: 10rpx;
-  padding: 18rpx;
-  border: 1rpx solid #EEEEEE;
+  border-radius: 14rpx;
+  padding: 20rpx;
+  border: 1rpx solid #F0F0F0;
 }
 
-.column-title { 
-  font-size: 34rpx; 
-  font-weight: 700; 
-  color: #C41E3A; 
-  display: block; 
+.column-title {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #C41E3A;
+  display: block;
   margin-bottom: 14rpx;
-  padding-bottom: 10rpx;
-  border-bottom: 2rpx solid #C41E3A;
 }
 
 /* ---------- 解锁 ---------- */
 .share-blur {
-  padding: 40rpx 32rpx;
-  margin-top: 16rpx;
+  padding: 40rpx;
+  margin-top: 20rpx;
   background: #FAFAFA;
-  border-radius: 10rpx;
-  border: 1rpx solid #EEEEEE;
+  border-radius: 16rpx;
+  border: 1rpx solid #F0F0F0;
   text-align: center;
 }
 
-.blur-text { 
-  font-size: 34rpx; 
-  font-weight: 600; 
-  color: #1a1a1a; 
-  display: block; 
-  margin-bottom: 8rpx; 
+.blur-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  display: block;
+  margin-bottom: 10rpx;
 }
 
-.blur-hint { 
-  font-size: 36rpx; 
-  color: #999999; 
-  display: block; 
-  margin-bottom: 20rpx; 
+.blur-hint {
+  font-size: 22rpx;
+  color: #999999;
+  display: block;
+  margin-bottom: 20rpx;
 }
 
 .share-btn {
   background: #C41E3A;
   color: #FFFFFF;
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-weight: 600;
   padding: 20rpx 48rpx;
-  border-radius: 8rpx;
+  border-radius: 10rpx;
   border: none;
 }
 .share-btn::after { border: none; }
