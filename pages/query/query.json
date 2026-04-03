@@ -1,6 +1,5 @@
 {
   "navigationBarTitleText": "手动查询",
-  "enablePullDownRefresh": false,
   "usingComponents": {
     "shared-result": "/components/shared-result/index"
   }

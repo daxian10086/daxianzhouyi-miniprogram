@@ -1,24 +1,24 @@
-/**app.wxss**/
+/* app.wxss - 全局样式（简约现代风格） */
 
-/* ========== 简约有质感风格 ========== */
-
+/* ---------- 全局重置与基础 ---------- */
 page {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background-color: #F5F5F5;
   font-size: 28rpx;
   color: #333333;
+  line-height: 1.6;
 }
 
 page view, page button, page text { box-sizing: border-box; }
 
-/* ---------- 页面基础 ---------- */
+/* ---------- 页面容器 ---------- */
 .container {
   background: #FFFFFF;
-  padding: 24rpx;
+  padding: 32rpx;
   min-height: 100vh;
 }
 
-/* ---------- 标题区域 ---------- */
+/* ---------- 头部 ---------- */
 .header {
   text-align: center;
   padding: 24rpx 0;
@@ -53,23 +53,30 @@ page view, page button, page text { box-sizing: border-box; }
   width: 100%;
   margin: 16rpx 0;
   padding: 28rpx;
-  background: #C41E3A;
+  background: linear-gradient(135deg, #C41E3A 0%, #A01830 100%);
   color: #FFFFFF;
   font-size: 32rpx;
   font-weight: 600;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
   border: none;
   text-align: center;
-  letter-spacing: 2rpx;
+  letter-spacing: 4rpx;
+  transition: all 0.2s ease;
 }
+
 .cast-btn::after,
 .query-btn::after { border: none; }
 
-.query-btn {
-  background: #444444;
+.cast-btn[disabled],
+.query-btn[disabled] {
+  opacity: 0.5;
 }
 
-/* ---------- 副标题在按钮之间 ---------- */
+.query-btn {
+  background: linear-gradient(135deg, #555555 0%, #444444 100%);
+}
+
+/* ---------- 副标题 ---------- */
 .mid-subtitle {
   text-align: center;
   padding: 24rpx 0;
@@ -78,117 +85,10 @@ page view, page button, page text { box-sizing: border-box; }
 .mid-subtitle .subtitle {
   font-size: 30rpx;
   color: #999999;
-  letter-spacing: 2rpx;
+  letter-spacing: 4rpx;
 }
 
-/* ---------- 卦象信息 ---------- */
-.hexagram-info { }
-.hexagram-left { }
-.hexagram-right { }
-.number { }
-.name-line { }
-.name { }
-.line { }
-.trigram-item .label { }
-.trigram-item .value { }
-
-/* ---------- 免责声明 ---------- */
-.disclaimer-btn {
-  text-align: center;
-  padding: 32rpx;
-}
-
-.disclaimer-text {
-  font-size: 22rpx;
-  color: #AAAAAA;
-}
-
-.disclaimer-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.disclaimer-content {
-  background: #FFFFFF;
-  width: 85%;
-  border-radius: 20rpx;
-  padding: 36rpx;
-}
-
-.disclaimer-title {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #333333;
-  text-align: center;
-  display: block;
-  margin-bottom: 20rpx;
-}
-
-.disclaimer-text {
-  font-size: 26rpx;
-  color: #666666;
-  line-height: 1.7;
-  display: block;
-  margin-bottom: 14rpx;
-}
-
-.disclaimer-close-btn {
-  display: block;
-  width: 100%;
-  padding: 24rpx;
-  background: #C41E3A;
-  color: #FFFFFF;
-  font-size: 30rpx;
-  font-weight: 600;
-  border-radius: 12rpx;
-  border: none;
-  margin-top: 28rpx;
-}
-.disclaimer-close-btn::after { border: none; }
-
-/* ---------- 查询区域 ---------- */
-.query-section {
-  background: #F8F8F8;
-  border-radius: 16rpx;
-  padding: 24rpx;
-  margin-bottom: 20rpx;
-}
-
-.input-row {
-  display: flex;
-  gap: 16rpx;
-}
-
-.input-group {
-  flex: 1;
-}
-
-.input-group .label {
-  font-size: 24rpx;
-  color: #666666;
-  display: block;
-  margin-bottom: 10rpx;
-  font-weight: 500;
-}
-
-.picker {
-  background: #FFFFFF;
-  border: 1rpx solid #E0E0E0;
-  border-radius: 10rpx;
-  padding: 20rpx;
-  font-size: 26rpx;
-  color: #333333;
-}
-
-/* ---------- 摇一卦专属 ---------- */
+/* ---------- 摇一卦 ---------- */
 .shake-hint-container {
   display: flex;
   justify-content: center;
@@ -210,9 +110,7 @@ page view, page button, page text { box-sizing: border-box; }
   margin: 0 auto 24rpx;
 }
 
-.shake-icon {
-  font-size: 72rpx;
-}
+.shake-icon { font-size: 72rpx; }
 
 .shake-hint-title {
   font-size: 32rpx;
@@ -261,7 +159,7 @@ page view, page button, page text { box-sizing: border-box; }
   font-weight: 600;
 }
 
-/* ---------- 结果外层 ---------- */
+/* ---------- 结果区域（清除默认样式） ---------- */
 .result {
   border: none !important;
   background: transparent !important;
@@ -270,6 +168,100 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .result::before,
-.result::after {
-  display: none !important;
+.result::after { display: none !important; }
+
+/* ========== 全局共享组件样式 ========== */
+
+/* ---------- 免责声明（按钮+弹窗） ---------- */
+.disclaimer-btn {
+  text-align: center;
+  padding: 32rpx;
+}
+
+.disclaimer-text {
+  font-size: 22rpx;
+  color: #AAAAAA;
+}
+
+.disclaimer-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.disclaimer-content {
+  background: #FFFFFF;
+  width: 85%;
+  max-width: 600rpx;
+  border-radius: 20rpx;
+  padding: 40rpx;
+}
+
+.disclaimer-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333333;
+  text-align: center;
+  display: block;
+  margin-bottom: 24rpx;
+}
+
+.disclaimer-body-text {
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.8;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.disclaimer-close-btn {
+  display: block;
+  width: 100%;
+  padding: 24rpx;
+  background: #C41E3A;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  font-weight: 600;
+  border-radius: 12rpx;
+  border: none;
+  margin-top: 28rpx;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+.disclaimer-close-btn::after { border: none; }
+
+/* ---------- 查询区域 ---------- */
+.query-section {
+  background: #F8F8F8;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.input-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.input-group { flex: 1; }
+
+.input-group .label {
+  font-size: 24rpx;
+  color: #666666;
+  display: block;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+}
+
+.picker {
+  background: #FFFFFF;
+  border: 1rpx solid #E0E0E0;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  color: #333333;
 }

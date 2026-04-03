@@ -1,5 +1,5 @@
 <view class="container">
-  <!-- 标题 -->
+  <!-- 版本号 -->
   <view class="header">
     <text class="version">{{version}}</text>
   </view>
@@ -16,27 +16,31 @@
   <!-- 摇卦动画 -->
   <view class="shaking-area" wx:if="{{isShaking}}">
     <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
-    <view class="shaking-text active">正在摇卦...</view>
+    <text class="shaking-text active">正在摇卦...</text>
   </view>
   <view class="shaking-area" wx:if="{{isAnimating && !isShaking}}">
     <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
-    <view class="shaking-text active">算卦中...</view>
+    <text class="shaking-text active">算卦中...</text>
   </view>
 
   <!-- 按钮 -->
   <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">算一卦</button>
 
   <!-- 副标题 -->
-  <view class="mid-subtitle"><text class="subtitle">默念所想，心诚则灵</text></view>
+  <view class="mid-subtitle">
+    <text class="subtitle">默念所想，心诚则灵</text>
+  </view>
 
   <button class="query-btn" bindtap="navigateToQuery" disabled="{{isShakingOrListening}}">手动查询</button>
 
   <!-- 免责声明 -->
-  <view class="disclaimer-btn" bindtap="showDisclaimer"><text class="disclaimer-text">⚠️ 免责声明</text></view>
+  <view class="disclaimer-btn" bindtap="showDisclaimer">
+    <text class="disclaimer-text">⚠️ 免责声明</text>
+  </view>
 
-  <!-- 结果 - 完整使用共享组件 -->
+  <!-- 结果 -->
   <view class="result" wx:if="{{hexagram}}">
-    <shared-result 
+    <shared-result
       hexagram="{{hexagram}}"
       fortuneAnalysis="{{fortuneAnalysis}}"
       mainFortune="{{mainFortune}}"
@@ -51,12 +55,10 @@
 <!-- 免责声明弹窗 -->
 <view class="disclaimer-modal" wx:if="{{showDisclaimerModal}}">
   <view class="disclaimer-content">
-    <view class="disclaimer-header"><text class="disclaimer-title">免责声明</text></view>
-    <view class="disclaimer-body">
-      <text class="disclaimer-text">本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。</text>
-      <text class="disclaimer-text">人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。</text>
-      <text class="disclaimer-text">本小程序不承担任何因使用本服务而产生的后果。</text>
-    </view>
-    <view class="disclaimer-footer"><button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button></view>
+    <text class="disclaimer-title">免责声明</text>
+    <text class="disclaimer-body-text">本小程序仅供娱乐参考，周易占卜属于传统文化内容，请勿过度迷信。</text>
+    <text class="disclaimer-body-text">人生掌握在自己手中，命运可以通过努力改变。如遇重大决策，请理性思考，咨询专业人士。</text>
+    <text class="disclaimer-body-text">本小程序不承担任何因使用本服务而产生的后果。</text>
+    <button class="disclaimer-close-btn" bindtap="hideDisclaimer">我已知晓</button>
   </view>
 </view>

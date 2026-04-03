@@ -31,31 +31,59 @@
   <!-- 主卦 -->
   <view class="tab-content" wx:if="{{currentTab == 0}}">
     <view class="hexagram-detail">
-      <view class="detail-item"><text class="detail-label">序卦</text><text class="detail-value">{{hexagram.xuGua}}</text></view>
-      <view class="detail-item"><text class="detail-label">杂卦</text><text class="detail-value">{{hexagram.zaGua}}</text></view>
-      <view class="detail-item"><text class="detail-label">卦辞</text><text class="detail-value">{{hexagram.guaCi}}</text></view>
-      <view class="detail-item"><text class="detail-label">彖传</text><text class="detail-value">{{hexagram.tuanZhuan}}</text></view>
-      <view class="detail-item"><text class="detail-label">象传</text><text class="detail-value">{{hexagram.xiangZhuan}}</text></view>
-      <view class="detail-item"><text class="detail-label">卦象</text><text class="detail-value">{{hexagram.overallMeaning}}</text></view>
+      <view class="detail-item" wx:if="{{hexagram.xuGua}}">
+        <text class="detail-label">序卦</text>
+        <text class="detail-value">{{hexagram.xuGua}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.zaGua}}">
+        <text class="detail-label">杂卦</text>
+        <text class="detail-value">{{hexagram.zaGua}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.guaCi}}">
+        <text class="detail-label">卦辞</text>
+        <text class="detail-value">{{hexagram.guaCi}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.tuanZhuan}}">
+        <text class="detail-label">彖传</text>
+        <text class="detail-value">{{hexagram.tuanZhuan}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.xiangZhuan}}">
+        <text class="detail-label">象传</text>
+        <text class="detail-value">{{hexagram.xiangZhuan}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.overallMeaning}}">
+        <text class="detail-label">卦象</text>
+        <text class="detail-value">{{hexagram.overallMeaning}}</text>
+      </view>
     </view>
   </view>
 
   <!-- 爻 -->
   <view class="tab-content" wx:if="{{currentTab == 1}}">
     <view class="hexagram-detail">
-      <view class="detail-item" wx:if="{{hexagram.selectedLineName}}"><text class="line-block">{{hexagram.selectedLineName}}</text></view>
-      <view class="detail-item" wx:if="{{hexagram.selectedLineText}}"><text class="detail-label">爻辞</text><text class="detail-value">{{hexagram.selectedLineText}}</text></view>
-      <view class="detail-item" wx:if="{{hexagram.selectedLineDesc}}"><text class="detail-label">象曰</text><text class="detail-value">{{hexagram.selectedLineDesc}}</text></view>
+      <view class="detail-item" wx:if="{{hexagram.selectedLineName}}">
+        <text class="line-block">{{hexagram.selectedLineName}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.selectedLineText}}">
+        <text class="detail-label">爻辞</text>
+        <text class="detail-value">{{hexagram.selectedLineText}}</text>
+      </view>
+      <view class="detail-item" wx:if="{{hexagram.selectedLineDesc}}">
+        <text class="detail-label">象曰</text>
+        <text class="detail-value">{{hexagram.selectedLineDesc}}</text>
+      </view>
     </view>
   </view>
 
   <!-- 详解 -->
   <view class="tab-content" wx:if="{{currentTab == 2}}">
+    <!-- 未解锁 -->
     <view class="share-blur" wx:if="{{!hasShared}}">
       <text class="blur-text">🔒 内容已隐藏</text>
-      <text class="blur-hint">观看广告即可查看</text>
+      <text class="blur-hint">观看广告即可查看运势详解</text>
       <button class="share-btn" bindtap="onUnlock">立即解锁</button>
     </view>
+    <!-- 已解锁 -->
     <view class="detail-columns" wx:if="{{hasShared}}">
       <view class="detail-column">
         <text class="column-title">主卦详解</text>
