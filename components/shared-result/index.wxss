@@ -32,16 +32,12 @@
   letter-spacing: 4rpx;
 }
 
-.name-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 14rpx;
-}
 
 .line-name {
   font-size: 28rpx;
-  color: #666666;
+  color: #888888;
+  display: block;
+  margin-top: 6rpx;
 }
 
 .trigram-label {
