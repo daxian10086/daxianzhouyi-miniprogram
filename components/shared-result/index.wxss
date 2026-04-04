@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80rpx;
+  gap: 140rpx;
   padding: 28rpx 32rpx;
   margin-bottom: 20rpx;
   background: #FAFAFA;
