@@ -79,7 +79,7 @@ App({
 
   globalData: {
     userInfo: null,
-    version: 'v2.4.154',
-    versionDate: '2026-04-01'
+    version: 'v2.4.169',
+    versionDate: '2026-04-04'
   }
 })
