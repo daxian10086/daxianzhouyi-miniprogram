@@ -15,11 +15,11 @@
 
   <!-- 摇卦动画 -->
   <view class="shaking-area" wx:if="{{isShaking}}">
-    <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
+    <image class="shaking-img shake-animation" src="/assets/shaking.svg" mode="widthFix"></image>
     <text class="shaking-text active">探索中...</text>
   </view>
   <view class="shaking-area" wx:if="{{isAnimating && !isShaking}}">
-    <image class="shaking-img shake-animation" src="/assets/shaking.png" mode="widthFix"></image>
+    <image class="shaking-img shake-animation" src="/assets/shaking.svg" mode="widthFix"></image>
     <text class="shaking-text active">解析中...</text>
   </view>
 
