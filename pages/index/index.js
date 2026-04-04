@@ -15,7 +15,7 @@ Page({
     isListening: false,
     isShaking: false,
     isShakingOrListening: false,
-    shakeStatusText: '摇动手机开始算卦',
+    shakeStatusText: '摇动手机探索易经',
     hasShared: false
   },
 
@@ -77,7 +77,7 @@ Page({
       this.lastShakeTime = Date.now()
       if (!this.data.isShaking) {
         this.shakeStartTime = Date.now()
-        this.setData({ isShaking: true, shakeStatusText: '正在摇卦...', shakingClass: 'active' })
+        this.setData({ isShaking: true, shakeStatusText: '探索中...', shakingClass: 'active' })
         this.startVibration()
       }
       if (this._stopShakeTimer) clearTimeout(this._stopShakeTimer)
@@ -89,7 +89,7 @@ Page({
     if (this._stopShakeTimer) { clearTimeout(this._stopShakeTimer); this._stopShakeTimer = null }
     this.stopVibration()
     this.stopAccelerometer()
-    this.setData({ isShaking: false, showShakeHint: false, isAnimating: true, shakeStatusText: '算卦中...' })
+    this.setData({ isShaking: false, showShakeHint: false, isAnimating: true, shakeStatusText: '解析中...' })
     setTimeout(() => this.performCastHexagram(), 2000)
   },
 
@@ -122,7 +122,7 @@ Page({
 
   castHexagram() {
     if (this.data.isAnimating || this.data.showShakeHint || this.data.isShaking) return
-    this.setData({ showShakeHint: true, shakeStatusText: '摇动手机开始算卦', isShaking: false })
+    this.setData({ showShakeHint: true, shakeStatusText: '摇动手机探索易经', isShaking: false })
     this.startAccelerometer()
     this._shakeTimeout = setTimeout(() => {
       if (this.data.showShakeHint && !this.data.isShaking && !this.data.isAnimating) {
@@ -149,15 +149,15 @@ Page({
       this.setData({
         isAnimating: false, shakingClass: '', hexagram: normalizedHexagram,
         currentTab: 0, fortuneAnalysis, mainFortune,
-        shakeStatusText: '摇动手机开始算卦', hasShared: false
+        shakeStatusText: '摇动手机探索易经', hasShared: false
       })
 
       wx.vibrateLong()
       wx.nextTick(() => wx.pageScrollTo({ scrollTop: 9999, duration: 300 }))
     } catch (error) {
-      console.error('算卦出错:', error)
+      console.error('解析出错:', error)
       this.setData({ isAnimating: false, shakingClass: '', hexagram: null, fortuneAnalysis: null })
-      wx.showToast({ title: '算卦出错，请重试', icon: 'none' })
+      wx.showToast({ title: '解析出错，请重试', icon: 'none' })
     }
   },
 
