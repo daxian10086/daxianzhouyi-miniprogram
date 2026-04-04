@@ -139,12 +139,7 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shake-animation {
-  animation: spin 1.2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  /* SVG内部已有SMIL旋转动画，CSS不再重复 */
 }
 
 .shaking-text {

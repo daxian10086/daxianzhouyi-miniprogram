@@ -8,6 +8,11 @@
       <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#C41E3A" flood-opacity="0.4"/>
     </filter>
   </defs>
+  <!-- 外圈固定 -->
   <circle cx="80" cy="80" r="65" fill="url(#bg)" filter="url(#shadow)"/>
-  <text x="80" y="90" font-family="serif" font-size="56" text-anchor="middle" fill="white" opacity="0.95">☯</text>
+  <!-- ☯ 旋转 -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 80 80" to="360 80 80" dur="2s" repeatCount="indefinite"/>
+    <text x="80" y="90" font-family="serif" font-size="56" text-anchor="middle" fill="white" opacity="0.95">☯</text>
+  </g>
 </svg>
