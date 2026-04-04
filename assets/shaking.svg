@@ -11,8 +11,8 @@
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
       <!-- 太极符号：白底圆+黑半圆 -->
       <circle cx="0" cy="0" r="48" fill="white" filter="url(#shadow)"/>
-      <path d="M0,-48 A48,48 0 0,1 0,48 A24,24 0 0,1 0,0 A24,24 0 0,0 0,-48 Z" fill="#333"/>
-      <circle cx="0" cy="-24" r="8" fill="#333"/>
+      <path d="M0,-48 A48,48 0 0,1 0,48 A24,24 0 0,1 0,0 A24,24 0 0,0 0,-48 Z" fill="#C41E3A"/>
+      <circle cx="0" cy="-24" r="8" fill="#C41E3A"/>
       <circle cx="0" cy="24" r="8" fill="white"/>
     </g>
   </g>
