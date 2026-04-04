@@ -139,7 +139,13 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 .shake-animation {
-  /* SVG内部已有SMIL旋转动画，CSS不再重复 */
+  /* SVG内部SMIL旋转 + CSS抖动 */
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8rpx); }
 }
 
 .shaking-text {
