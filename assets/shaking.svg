@@ -10,11 +10,16 @@
   </defs>
   <!-- 外圈固定 -->
   <circle cx="80" cy="80" r="65" fill="url(#bg)" filter="url(#shadow)"/>
-  <!-- ☯ 以圆心旋转 -->
+  <!-- 定位到圆心 -->
   <g transform="translate(80,80)">
+    <!-- 旋转层（嵌套g防止覆盖translate） -->
     <g>
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
-      <text x="0" y="0" font-family="serif" font-size="96" text-anchor="middle" dominant-baseline="central" fill="white" opacity="0.95">☯</text>
+      <!-- 太极符号：精确居中于(0,0) -->
+      <circle cx="0" cy="0" r="36" fill="white"/>
+      <path d="M0,-36 A36,36 0 0,1 0,36 A18,18 0 0,1 0,0 A18,18 0 0,0 0,-36 Z" fill="#333"/>
+      <circle cx="0" cy="-18" r="6" fill="#333"/>
+      <circle cx="0" cy="18" r="6" fill="white"/>
     </g>
   </g>
 </svg>
