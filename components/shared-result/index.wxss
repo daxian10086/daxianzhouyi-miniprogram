@@ -5,58 +5,55 @@
 /* ---- 卦象信息 ---- */
 .hexagram-info {
   display: flex;
-  justify-content: center;
-  gap: 80rpx;
-  padding: 32rpx;
+  flex-direction: column;
+  align-items: center;
+  padding: 28rpx 32rpx;
   margin-bottom: 20rpx;
   background: #FAFAFA;
   border-radius: 16rpx;
   border: 1rpx solid #F0F0F0;
 }
 
-.hexagram-left { text-align: center; }
-.hexagram-right { text-align: center; }
+.hexagram-top { margin-bottom: 8rpx; }
 
 .number {
   font-size: 24rpx;
   color: #999999;
-  display: block;
-  margin-bottom: 6rpx;
 }
 
-.name {
-  font-size: 48rpx;
+.hexagram-name-big {
+  font-size: 56rpx;
   font-weight: 800;
   color: #C41E3A;
-  display: block;
-  letter-spacing: 2rpx;
+  letter-spacing: 4rpx;
+  margin-bottom: 16rpx;
 }
 
-.name-row {
+.hexagram-trigrams {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.hexagram-trigrams .trigram-item {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  gap: 12rpx;
+  gap: 6rpx;
 }
 
-.line-name {
-  font-size: 26rpx;
-  color: #666666;
-}
-
-.trigram-label {
-  font-size: 22rpx;
-  color: #BBBBBB;
-  display: block;
-  margin-bottom: 4rpx;
-  margin-top: 12rpx;
-}
-
-.trigram-value {
-  font-size: 28rpx;
+.hexagram-trigrams .trigram-symbol {
+  font-size: 32rpx;
   color: #444444;
-  display: block;
-  font-weight: 500;
+}
+
+.hexagram-trigrams .trigram-name {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.trigram-divider {
+  font-size: 24rpx;
+  color: #DDDDDD;
 }
 
 /* ---- 选项卡 ---- */
