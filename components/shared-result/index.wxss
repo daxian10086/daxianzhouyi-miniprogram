@@ -6,8 +6,9 @@
 .hexagram-info {
   display: flex;
   justify-content: center;
-  gap: 100rpx;
-  padding: 32rpx 24rpx;
+  align-items: center;
+  gap: 80rpx;
+  padding: 28rpx 32rpx;
   margin-bottom: 20rpx;
   background: #FAFAFA;
   border-radius: 16rpx;
@@ -16,6 +17,10 @@
 
 .hexagram-left { text-align: center; }
 .hexagram-right { text-align: center; }
+
+.hexagram-right .trigram-item:first-child {
+  margin-bottom: 12rpx;
+}
 
 .number {
   font-size: 26rpx;
@@ -44,8 +49,7 @@
   font-size: 24rpx;
   color: #BBBBBB;
   display: block;
-  margin-bottom: 6rpx;
-  margin-top: 12rpx;
+  margin-bottom: 4rpx;
 }
 
 .trigram-value {
