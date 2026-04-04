@@ -10,9 +10,9 @@
   </defs>
   <!-- 外圈固定 -->
   <circle cx="80" cy="80" r="65" fill="url(#bg)" filter="url(#shadow)"/>
-  <!-- ☯ 以自身中心旋转 -->
-  <text x="80" y="80" font-family="serif" font-size="96" text-anchor="middle" dominant-baseline="central" fill="white" opacity="0.95">
-    ☯
-    <animateTransform attributeName="transform" type="rotate" from="0 80 80" to="360 80 80" dur="2s" repeatCount="indefinite"/>
-  </text>
+  <!-- ☯ 以圆心旋转 -->
+  <g transform="translate(80,80)">
+    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    <text x="0" y="0" font-family="serif" font-size="96" text-anchor="middle" dominant-baseline="central" fill="white" opacity="0.95">☯</text>
+  </g>
 </svg>
