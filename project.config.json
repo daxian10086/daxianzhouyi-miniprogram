@@ -1,7 +1,7 @@
 {
-  "description": "易经文化 - 传统周易学习小程序",
-  "version": "2.4.154",
-  "versionName": "v2.4.154",
+  "description": "晋易小典 - 传统周易学习小程序",
+  "version": "2.4.156",
+  "versionName": "v2.4.156",
   "versionDate": "2026-04-01",
   "packOptions": {
     "ignore": [],
@@ -45,7 +45,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
   "appid": "wx8efbbb29c6b81122",
-  "projectname": "易经文化",
+  "projectname": "晋易小典",
   "debugOptions": {
     "hidedInDevtools": []
   },

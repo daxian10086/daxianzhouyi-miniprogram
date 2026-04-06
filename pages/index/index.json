@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "易经文化",
+  "navigationBarTitleText": "晋易小典",
   "usingComponents": {
     "shared-result": "/components/shared-result/index"
   }
