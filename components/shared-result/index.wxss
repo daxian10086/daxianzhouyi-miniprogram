@@ -33,7 +33,7 @@
   font-size: 52rpx;
   font-weight: 800;
   color: #C41E3A;
-  display: block;
+  display: inline;
   letter-spacing: 4rpx;
 }
 
@@ -41,6 +41,7 @@
   font-size: 52rpx;
   color: #000000;
   margin-left: 8rpx;
+  display: inline;
 }
 
 
