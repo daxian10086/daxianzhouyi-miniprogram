@@ -144,8 +144,8 @@ page view, page button, page text { box-sizing: border-box; }
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8rpx); }
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8rpx); }
 }
 
 .shaking-text {
