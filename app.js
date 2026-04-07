@@ -73,7 +73,8 @@ App({
       tuanZhuan: hexagram.彖传 || '',
       xiangZhuan: hexagram.象传 || '',
       xuGua: hexagram.序卦 || '',
-      zaGua: hexagram.杂卦 || ''
+      zaGua: hexagram.杂卦 || '',
+      symbol: String.fromCharCode(0x4DC0 + hexagram.number - 1)
     }
   },
 
