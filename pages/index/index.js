@@ -173,6 +173,27 @@ Page({
     }
     this.setData({ hasShared: false })
     this._initVideoAd()
+
+    // 显示分享菜单
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
+  },
+
+  // 分享给好友
+  onShareAppMessage() {
+    return {
+      title: '晋易小典 - 传统周易学习',
+      path: '/pages/index/index'
+    }
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '晋易小典 - 传统周易学习'
+    }
   },
 
   _initVideoAd() {
