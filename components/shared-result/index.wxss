@@ -37,6 +37,12 @@
   letter-spacing: 4rpx;
 }
 
+.symbol {
+  font-size: 52rpx;
+  color: #000000;
+  margin-left: 8rpx;
+}
+
 
 .line-name {
   font-size: 28rpx;
