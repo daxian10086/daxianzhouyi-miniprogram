@@ -28,7 +28,7 @@
 
   <!-- 副标题 -->
   <view class="mid-subtitle">
-    <text class="subtitle">默念所想，心诚则灵</text>
+    <text class="subtitle">默念所想↑心诚则灵</text>
   </view>
 
   <button class="query-btn" bindtap="navigateToQuery" disabled="{{isShakingOrListening}}">手动查询</button>
