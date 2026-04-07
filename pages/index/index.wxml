@@ -24,7 +24,7 @@
   </view>
 
   <!-- 按钮 -->
-  <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">探索一卦</button>
+  <button class="cast-btn" bindtap="castHexagram" disabled="{{isAnimating || showShakeHint || isShaking}}">摇一卦</button>
 
   <!-- 副标题 -->
   <view class="mid-subtitle">
