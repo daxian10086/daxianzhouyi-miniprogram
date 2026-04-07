@@ -70,7 +70,7 @@ Page({
     if (app.globalData.version) this.setData({ version: app.globalData.version })
 
     const guaOptions = hexagramsData.map((g, i) => ({
-      label: `第${g.number}卦 ${g.name}`, value: i
+      label: `第${g.number}卦 ${g.name} ${String.fromCharCode(0x4DC0 + g.number - 1)}`, value: i
     }))
     this.setData({ guaOptions, hasShared: false })
     this._initVideoAd()
