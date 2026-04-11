@@ -23,14 +23,10 @@ jobs:
         run: echo "${{ secrets.WEAPP_PRIVATE_KEY }}" > private_key.pem
       
       - name: Upload to WeChat Mini Program
+        id: upload
         run: |
           set -x
-          npx miniprogram-ci upload \
-            --appid wx8efbbb29c6b81122 \
-            --privateKeyPath private_key.pem \
-            --projectPath . \
-            --version 2.4.188 \
-            --desc 'CI 自动上传' \
-            --setting '{"es6":true,"enhance":true,"minify":true}' \
-            2>&1
+          RESPONSE=$(npx miniprogram-ci upload             --appid wx8efbbb29c6b81122             --privateKeyPath private_key.pem             --projectPath .             --version 2.4.188             --desc 'CI 自动上传'             --setting '{"es6":true,"enhance":true,"minify":true}'             2>&1)
+          echo "response=$RESPONSE"
+          echo "$RESPONSE"
           echo "Upload completed with exit code: $?"
