@@ -11,44 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.10'
-          
-      - name: Install miniprogram-ci
-        run: |
-          pip install --upgrade pip
-          pip install miniprogram-ci --index-url https://pypi.org/simple/
+          node-version: '18'
+      
+      - name: Install wechat-miniprogram-ci
+        run: npm install -g miniprogram-ci
       
       - name: Save private key
         run: echo "${{ secrets.WEAPP_PRIVATE_KEY }}" > private_key.pem
       
-      - name: Deploy to WeChat Mini Program
+      - name: Upload to WeChat Mini Program
         run: |
-          python << 'PYEOF'
-          import miniprogram_ci
-          from pathlib import Path
-          
-          project = miniprogram_ci.Project(
-            appid='wx8efbbb29c6b81122',
-            type='miniProgram',
-            projectPath=Path('.'),
-            privateKeyPath='private_key.pem',
-            ignores=['node_modules/**/*', '.git/**/*']
-          )
-          
-          upload_result = miniprogram_ci.upload(
-            project=project,
-            version='2.4.188',
-            desc='CI 自动上传',
-            setting={
-              'es6': True,
-              'enhance': True,
-              'minify': True
-            }
-          )
-          print(f"Upload success!")
-          print(f"Code id: {upload_result.codeid}")
-          print(f"Mini code id: {upload_result.miniCodeid}")
-          PYEOF
+          npx miniprogram-ci upload \
+            --appid wx8efbbb29c6b81122 \
+            --privateKeyPath private_key.pem \
+            --projectPath . \
+            --version 2.4.188 \
+            --desc 'CI 自动上传' \
+            --setting '{"es6":true,"enhance":true,"minify":true}'
