@@ -2,8 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/query/query",
-    "pages/result/result",
-    "pages/history/history"
+    "pages/result/result"
   ],
   "window": {
     "backgroundTextStyle": "light",
