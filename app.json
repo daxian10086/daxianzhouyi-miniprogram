@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/divination/divination",
+    "pages/query/query",
     "pages/result/result",
     "pages/history/history"
   ],
