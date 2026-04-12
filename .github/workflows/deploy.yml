@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,32 +27,35 @@ jobs:
           echo "${{ vars.WEAPP_PRIVATE_KEY_B64 }}" | base64 -d > private_key.pem
           echo "Private key saved: $(wc -c < private_key.pem) bytes"
       
+      - name: Read current version
+        id: version
+        run: |
+          CURRENT_VER=$(cat version.txt)
+          echo "Current version: $CURRENT_VER"
+          echo "current_ver=$CURRENT_VER" >> $GITHUB_OUTPUT
+
       - name: Update app.json version
         run: |
-          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
+          VERSION="2.4.${{ steps.version.outputs.current_ver }}"
           sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"v${VERSION}\"/" app.json
           sed -i "s/\"versionDate\": \"[^\"]*\"/\"versionDate\": \"$(date +%Y-%m-%d)\"/" app.json
           echo "Updated app.json version to v${VERSION}"
-          grep '"version"' app.json
 
       - name: Update index.js version
         run: |
-          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
+          VERSION="2.4.${{ steps.version.outputs.current_ver }}"
           sed -i "s/version: 'v[^']*'/version: 'v${VERSION}'/" pages/index/index.js
           echo "Updated index.js version to v${VERSION}"
-          grep "version:" pages/index/index.js | head -1
-      
+
       - name: Upload to WeChat Mini Program
         id: upload
         env:
-          WEEAP_APPID: ${{ vars.WEAPP_APPID }}
+          WEAPP_APPID: ${{ vars.WEAPP_APPID }}
         run: |
-          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
-          echo "=== miniprogram-ci version ==="
-          npx miniprogram-ci --version
+          VERSION="2.4.${{ steps.version.outputs.current_ver }}"
           echo "=== upload start ==="
           npx miniprogram-ci upload \
-            --appid $WEEAP_APPID \
+            --appid $WEAPP_APPID \
             --projectPath . \
             --privateKeyPath ./private_key.pem \
             --upload-version "${VERSION}" \
@@ -62,3 +68,18 @@ jobs:
             exit 1
           fi
           echo "Upload completed successfully"
+
+      - name: Increment version
+        run: |
+          CURRENT_VER=$(cat version.txt)
+          NEW_VER=$((CURRENT_VER + 1))
+          echo $NEW_VER > version.txt
+          echo "Incremented version from ${CURRENT_VER} to ${NEW_VER}"
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "ci: 版本号更新 to 2.4.${{ steps.version.outputs.current_ver }}"
+          git push
