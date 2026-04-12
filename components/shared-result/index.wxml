@@ -4,7 +4,10 @@
   <view class="hexagram-info">
     <view class="hexagram-left">
       <text class="number">第{{hexagram.number}}卦</text>
-      <text class="name">{{hexagram.name}}</text><text class="symbol">{{hexagram.symbol}}</text>
+      <view class="name-row">
+        <text class="name">{{hexagram.name}}</text>
+        <text class="symbol">{{hexagram.symbol}}</text>
+      </view>
       <text class="line-name">{{hexagram.selectedLineName}}</text>
     </view>
     <view class="hexagram-right">
