@@ -1,3 +1,26 @@
-.container {
-  padding: 20rpx;
+/* pages/result/result.wxss - 结果页面 v2.0 */
+
+.result-container {
+  padding: 32rpx;
+}
+
+.result-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+  text-align: center;
+}
+
+.result-empty-icon {
+  font-size: 96rpx;
+  margin-bottom: 32rpx;
+  opacity: 0.6;
+}
+
+.result-empty-text {
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 2rpx;
 }
