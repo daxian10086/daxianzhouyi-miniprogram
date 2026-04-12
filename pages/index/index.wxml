@@ -7,7 +7,7 @@
   <!-- 摇卦提示 -->
   <view class="shake-hint-container" wx:if="{{showShakeHint && !isShaking && !isAnimating}}">
     <view class="shake-hint-card">
-      <view class="shake-icon-wrapper"><text class="shake-icon">📳</text></view>
+      <image class="shake-icon-img" src="/assets/shaking.svg" mode="widthFix"></image>
       <text class="shake-hint-title">摇动手机探索易经</text>
       <text class="shake-hint-desc">像摇骰子一样上下左右摇晃手机</text>
     </view>
