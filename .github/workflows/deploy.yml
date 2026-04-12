@@ -20,13 +20,14 @@ jobs:
         run: npm install -g miniprogram-ci@latest
       
       - name: Save private key
-        run: printf '%s' "${WEAPP_PRIVATE_KEY}" > private_key.pem
+        run: |
+          echo "${{ vars.WEAPP_PRIVATE_KEY_B64 }}" | base64 -d > private_key.pem
+          echo "Private key saved: $(wc -c < private_key.pem) bytes"
       
       - name: Upload to WeChat Mini Program
         id: upload
         env:
-          WEAPP_PRIVATE_KEY: ${{ secrets.WEAPP_PRIVATE_KEY }}
-          WEAPP_APPID: ${{ secrets.WEAPP_APPID }}
+          WEAPP_APPID: ${{ vars.WEAPP_APPID }}
         run: |
           echo "=== miniprogram-ci version ==="
           npx miniprogram-ci --version
@@ -41,7 +42,7 @@ jobs:
           EXIT_CODE=$?
           echo "Exit code: $EXIT_CODE"
           if [ $EXIT_CODE -ne 0 ]; then
-            echo "Upload failed with exit code $EXIT_CODE"
+            echo "Upload failed"
             exit 1
           fi
           echo "Upload completed successfully"
