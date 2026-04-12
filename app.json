@@ -1,16 +1,28 @@
 {
+  "version": "v2.4.187",
+  "versionDate": "2026-04-04",
   "pages": [
     "pages/index/index",
-    "pages/query/query",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/query/query"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#8B4513",
-    "navigationBarTitleText": "大仙周易",
+    "navigationBarBackgroundColor": "#C41E3A",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json",
-  "version": "v2.4.187",
-  "versionDate": "2026-04-12"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于摇一摇功能"
+    },
+    "scope.accelerometer": {
+      "desc": "用于摇一摇功能"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }
