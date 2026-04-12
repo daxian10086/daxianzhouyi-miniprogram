@@ -3,7 +3,7 @@ const hexagramsData = require('../../data/hexagrams.js')
 
 Page({
   data: {
-    version: 'v2.4.194',
+    version: 'v2.4.195',
     isAnimating: false,
     hexagram: null,
     currentTab: 0,
