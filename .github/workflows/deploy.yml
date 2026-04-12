@@ -16,20 +16,19 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
           fetch-depth: 0
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      
+
       - name: Install wechat-miniprogram-ci
         run: npm install -g miniprogram-ci@latest
-      
+
       - name: Save private key
         run: |
           echo "${{ vars.WEAPP_PRIVATE_KEY_B64 }}" | base64 -d > private_key.pem
-          echo "Private key saved: $(wc -c < private_key.pem) bytes"
-      
+
       - name: Read current version
         id: version
         run: |
@@ -56,7 +55,6 @@ jobs:
           WEAPP_APPID: ${{ vars.WEAPP_APPID }}
         run: |
           VERSION="2.4.${{ steps.version.outputs.current_ver }}"
-          echo "=== upload start ==="
           npx miniprogram-ci upload \
             --appid $WEAPP_APPID \
             --projectPath . \
@@ -65,7 +63,6 @@ jobs:
             --upload-description "v${VERSION} - CI自动上传" \
             --robot 1
           EXIT_CODE=$?
-          echo "Exit code: $EXIT_CODE"
           if [ $EXIT_CODE -ne 0 ]; then
             echo "Upload failed"
             exit 1
@@ -83,7 +80,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add -A
           git diff --cached --quiet || git commit -m "ci: 版本号更新 to 2.4.${{ steps.version.outputs.current_ver }}"
           git push --force origin main
