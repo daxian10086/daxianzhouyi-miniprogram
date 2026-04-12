@@ -25,7 +25,7 @@ Page({
   lastZ: null,
   lastShakeTime: 0,
   shakeStartTime: null,
-  shakeThreshold: 2,
+  shakeThreshold: 1.5,
   stopShakeDelay: 800,
   isVibrating: false,
   videoAd: null,
