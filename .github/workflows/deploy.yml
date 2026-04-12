@@ -25,8 +25,17 @@ jobs:
       - name: Upload to WeChat Mini Program
         id: upload
         run: |
-          set -x
-          RESPONSE=$(npx miniprogram-ci upload             --appid wx8efbbb29c6b81122             --privateKeyPath private_key.pem             --projectPath .             --version 2.4.188             --desc 'CI 自动上传'             --setting '{"es6":true,"enhance":true,"minify":true}'             2>&1)
-          echo "response=$RESPONSE"
-          echo "$RESPONSE"
-          echo "Upload completed with exit code: $?"
+          npx miniprogram-ci upload \
+            --appid wx8efbbb29c6b81122 \
+            --privateKeyPath private_key.pem \
+            --projectPath . \
+            --version 2.4.189 \
+            --desc 'CI 自动上传' \
+            --setting '{"es6":true,"enhance":true,"minify":true}'
+          EXIT_CODE=$?
+          echo "Exit code: $EXIT_CODE"
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "Upload failed with exit code $EXIT_CODE"
+            exit 1
+          fi
+          echo "Upload completed successfully"
