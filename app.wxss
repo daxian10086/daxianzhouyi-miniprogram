@@ -12,7 +12,7 @@ page {
   --color-gold: #D4AF37;           /* 古铜金 */
   --color-ink: #1A1A1A;            /* 墨黑 */
   --color-ink-light: #333333;      /* 浅墨 */
-  --color-cream: #F5F0E6;          /* 米白背景 */
+  --color-cream: #FFFFFF;          /* 米白背景 */
   --color-cream-dark: #EDE7DB;     /* 深米色 */
   --color-gray-100: #F7F7F7;       /* 极浅灰 */
   --color-gray-200: #EEEEEE;       /* 卡片背景 */
@@ -63,7 +63,7 @@ page {
 /* ========== 全局重置 ========== */
 page {
   font-family: var(--font-family);
-  background-color: var(--color-cream);
+  background-color: #FFFFFF;
   font-size: var(--font-size-md);
   color: var(--color-gray-700);
   line-height: 1.6;
@@ -76,7 +76,7 @@ page view, page button, page text {
 
 /* ========== 页面容器 ========== */
 .container {
-  background: var(--color-cream);
+  background: #FFFFFF;
   padding: var(--spacing-xl);
   min-height: 100vh;
 }
