@@ -31,18 +31,25 @@ jobs:
           sed -i "s/\"versionDate\": \"[^\"]*\"/\"versionDate\": \"$(date +%Y-%m-%d)\"/" app.json
           echo "Updated app.json version to v${VERSION}"
           grep '"version"' app.json
+
+      - name: Update index.js version
+        run: |
+          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
+          sed -i "s/version: 'v[^']*'/version: 'v${VERSION}'/" pages/index/index.js
+          echo "Updated index.js version to v${VERSION}"
+          grep "version:" pages/index/index.js | head -1
       
       - name: Upload to WeChat Mini Program
         id: upload
         env:
-          WEAPP_APPID: ${{ vars.WEAPP_APPID }}
+          WEEAP_APPID: ${{ vars.WEAPP_APPID }}
         run: |
           VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
           echo "=== miniprogram-ci version ==="
           npx miniprogram-ci --version
           echo "=== upload start ==="
           npx miniprogram-ci upload \
-            --appid $WEAPP_APPID \
+            --appid $WEEAP_APPID \
             --projectPath . \
             --privateKeyPath ./private_key.pem \
             --upload-version "${VERSION}" \
