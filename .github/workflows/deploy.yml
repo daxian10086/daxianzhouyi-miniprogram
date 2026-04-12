@@ -26,9 +26,10 @@ jobs:
       
       - name: Update app.json version
         run: |
-          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"v2.4.${GITHUB_RUN_NUMBER}\"/" app.json
+          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"v${VERSION}\"/" app.json
           sed -i "s/\"versionDate\": \"[^\"]*\"/\"versionDate\": \"$(date +%Y-%m-%d)\"/" app.json
-          echo "Updated app.json version to v2.4.${GITHUB_RUN_NUMBER}"
+          echo "Updated app.json version to v${VERSION}"
           grep '"version"' app.json
       
       - name: Upload to WeChat Mini Program
@@ -36,6 +37,7 @@ jobs:
         env:
           WEAPP_APPID: ${{ vars.WEAPP_APPID }}
         run: |
+          VERSION=$(printf "2.4.%03d" $GITHUB_RUN_NUMBER)
           echo "=== miniprogram-ci version ==="
           npx miniprogram-ci --version
           echo "=== upload start ==="
@@ -43,8 +45,8 @@ jobs:
             --appid $WEAPP_APPID \
             --projectPath . \
             --privateKeyPath ./private_key.pem \
-            --upload-version "2.4.${GITHUB_RUN_NUMBER}" \
-            --upload-description "v2.4.${GITHUB_RUN_NUMBER} - CI自动上传" \
+            --upload-version "${VERSION}" \
+            --upload-description "v${VERSION} - CI自动上传" \
             --robot 1
           EXIT_CODE=$?
           echo "Exit code: $EXIT_CODE"
