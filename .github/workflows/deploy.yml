@@ -17,21 +17,27 @@ jobs:
           node-version: '18'
       
       - name: Install wechat-miniprogram-ci
-        run: npm install -g miniprogram-ci
+        run: npm install -g miniprogram-ci@latest
       
       - name: Save private key
-        run: echo "${{ secrets.WEAPP_PRIVATE_KEY }}" > private_key.pem
+        run: echo "${WEAPP_PRIVATE_KEY}" > private_key.pem
       
       - name: Upload to WeChat Mini Program
         id: upload
+        env:
+          WEAPP_PRIVATE_KEY: ${{ secrets.WEAPP_PRIVATE_KEY }}
+          WEAPP_APPID: ${{ secrets.WEAPP_APPID }}
         run: |
+          echo "=== miniprogram-ci version ==="
+          npx miniprogram-ci --version
+          echo "=== upload start ==="
           npx miniprogram-ci upload \
-            --appid wx8efbbb29c6b81122 \
-            --privateKeyPath private_key.pem \
+            --appid $WEAPP_APPID \
             --projectPath . \
-            --version 2.4.189 \
-            --desc 'CI 自动上传' \
-            --setting '{"es6":true,"enhance":true,"minify":true}'
+            --privateKeyPath ./private_key.pem \
+            --upload-version "2.4.189" \
+            --upload-description "v2.4.189 - CI自动上传" \
+            --robot 1
           EXIT_CODE=$?
           echo "Exit code: $EXIT_CODE"
           if [ $EXIT_CODE -ne 0 ]; then
