@@ -20,7 +20,7 @@ jobs:
         run: npm install -g miniprogram-ci@latest
       
       - name: Save private key
-        run: echo "${WEAPP_PRIVATE_KEY}" > private_key.pem
+        run: printf '%s' "${WEAPP_PRIVATE_KEY}" > private_key.pem
       
       - name: Upload to WeChat Mini Program
         id: upload
