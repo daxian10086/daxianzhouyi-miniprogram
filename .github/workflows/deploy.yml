@@ -36,8 +36,8 @@ jobs:
             --appid $WEAPP_APPID \
             --projectPath . \
             --privateKeyPath ./private_key.pem \
-            --upload-version "2.4.189" \
-            --upload-description "v2.4.189 - CI自动上传" \
+            --upload-version "2.4.${GITHUB_RUN_NUMBER}" \
+            --upload-description "v2.4.${GITHUB_RUN_NUMBER} - CI自动上传" \
             --robot 1
           EXIT_CODE=$?
           echo "Exit code: $EXIT_CODE"
