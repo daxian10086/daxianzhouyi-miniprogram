@@ -2,7 +2,7 @@
 const app = getApp();
 Page({
   data: {
-    version: 'v2.4.200',
+    version: 'v2.4.187',
     hint: '点击下方按钮开始摇卦',
     result: null,
     history: []
